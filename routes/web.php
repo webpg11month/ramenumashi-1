@@ -49,9 +49,9 @@ Route::get('/shop','IndexController@shop');
 // 新規登録処理 
 Route::post('/message/resultregister','RegisterController@userRegister');
 
-// Route::group(["middleware"=> "guest"], function() {
-    //ログイン画面へ画面遷移
-    Route::post('/mypage','LoginController@userLogin');
+Route::group(["middleware"=> "loginCheck"], function() {
     //ログイン画面へ画面遷移 
     Route::get('/login','IndexController@login');
-// });
+    //ログイン画面へ画面遷移
+    Route::post('/mypage','LoginController@userLogin');
+});
