@@ -104,11 +104,11 @@
           <div class="main-login-grid">
             <div class="main-login-item" id="main-login-item1">
               <label class="required">
-                ユーザーIDとメールアドレス：
+                メールアドレス：
               </label>
             </div>
             <div class="main-login-item">
-              <input type="text" name="user_id" value="" required>
+              <input type="text" name="email"  value="" required>
             </div>
           </div>
           <div class="main-login-grid">
@@ -118,7 +118,7 @@
               </label>
             </div>
             <div class="main-login-item">
-              <input type="password" name="password" value="" required>
+              <input type="password" name="password" value="{{ old('password') }}" required>
             </div>
           </div>
           <div class="login-submit">
