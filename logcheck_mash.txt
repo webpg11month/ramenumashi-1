@@ -6,7 +6,7 @@ php artisan make:controller MypageController
 
 php artisan make:model Model/UserLogic
 
-php artisan make:request UserRegisterRequest
+php artisan make:request UserLoginRequest
 
 use Illuminate\Support\Facades\Log;
 Log::info('test');
