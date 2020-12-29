@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use App\Table\User;
 use Illuminate\Support\Facades\Log;
+use App\Http\Requests\UserLoginRequest;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Hash;
@@ -14,12 +15,12 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 class LoginController extends Controller
 {    
 
-    public function userLogin(Request $req){
+    public function userLogin(UserLoginRequest $req){
         $data = $req->all();
-        $email =User::where('email',$req->user_id)->value('email');
+        $email =User::where('email',$req->email)->value('email');
         $password1 = User::where('email',$req->email)->value('password');
 
-        $user_status = User::where('user_id',$req->user_id)->value('dlflag');
+        $user_status = User::where('user_id',$req->email)->value('dlflag');
         if($user_status === '3'){
             Log::info('退会者');
             return redirect()->back();
@@ -32,6 +33,7 @@ class LoginController extends Controller
             if(Auth::attempt($credentials)){
                 Log::info('ログイン成功');
                 $user = $req->all();
+                $req->session()->regenerateToken();
                 return view('/message/resultlogin',compact('user'));
             }else {
                 Log::info('メールアドレスが違う');

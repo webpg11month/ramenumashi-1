@@ -106,9 +106,12 @@
               <label class="required">
                 メールアドレス：
               </label>
+              @error('email')
+              <div class="alert">{{ $message }}</div>
+              @enderror
             </div>
             <div class="main-login-item">
-              <input type="text" name="email"  value="" required>
+              <input type="text" name="email"  value="" >
             </div>
           </div>
           <div class="main-login-grid">
@@ -116,9 +119,12 @@
               <label class="required">
                 パスワード：
               </label>
+              @error('password')
+              <div class="alert">{{ $message }}</div>
+              @enderror
             </div>
             <div class="main-login-item">
-              <input type="password" name="password" value="{{ old('password') }}" required>
+              <input type="password" name="password" value="{{ old('password') }}" >
             </div>
           </div>
           <div class="login-submit">
