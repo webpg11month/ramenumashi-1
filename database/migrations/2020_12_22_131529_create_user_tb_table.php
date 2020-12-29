@@ -14,6 +14,7 @@ class CreateUserTbTable extends Migration
     public function up()
     {
         Schema::create('user_tb', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('user_id',16);               //userid:PK
             $table->string('email',255)->nullable();    //メール:UQ
             $table->string('tel',20)->nullable();       //電話番号
