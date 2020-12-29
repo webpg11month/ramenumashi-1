@@ -53,5 +53,11 @@ Route::group(["middleware"=> "loginCheck"], function() {
     //ログイン画面へ画面遷移 
     Route::get('/login','IndexController@login');
     //ログイン画面へ画面遷移
-    Route::post('/mypage','LoginController@userLogin');
+    Route::post('/message/resultlogin','LoginController@userLogin');
+});
+//ログイン中
+Route::group(["middleware"=> "guest"], function() {
+    Route::get('/logout','LoginController@logout');
+    Route::get('/mypage/index','MypageController@index');
+    Route::get('/mypage','MypageController@mypage');
 });
