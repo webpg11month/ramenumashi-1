@@ -37,14 +37,16 @@
           <!-- 修正箇所 -->
           <nav class="header-nav-list">
             <ul class="main-nav">
-              <li>
-                <a class="header-link1-1" href="{{ url('/register') }}">Register</a>
+                <li>
+                <a class="header-link1-1" href="{{ url('/logout') }}">
+                  ログアウト
+                </a>
               </li>
               <li>
                 <a class="header-link1-1" href="{{ url('/umashi') }}">RamenUmashiについて</a>
               </li>
               <li>
-                <a class="header-link1-1" href="{{ url('/cancellation') }}">ラーメン店主様ご利用の場合</a>
+                <a class="header-link1-1" href="{{ url('/mypage/index') }}">ラーメン検索</a>
               </li>
               <li>
                 <a class="header-link1-1" href="{{ url('/umashi') }}">ラーメン店主様ご利用の場合</a>
@@ -95,9 +97,10 @@
           </nav>
         </div>
       </div>
-  </header>    <main class="wrapper-mypage">
+  </header>    
+  <main class="wrapper-mypage">
       <!-- ユーザー名を取得し表示 -->
-      <p class="mypage-login">パスタ様ログイン中</p>
+      <p class="mypage-login">{{$user['user_id']}}様ログイン中</p>
       <h1 class="mypage-head">お気に入り一覧</h1>
       <h1 class="mypage-head">マイページ</h1>
       <div class="wrapper grid">
