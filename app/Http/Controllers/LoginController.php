@@ -12,44 +12,41 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class LoginController extends Controller
-{
+{    
+
     public function userLogin(Request $req){
         $data = $req->all();
+        $email =User::where('email',$req->user_id)->value('email');
+        $password1 = User::where('email',$req->email)->value('password');
 
-        $user_id =User::where('user_id',$req->user_id)->value('user_id'); 
-        $password = User::where('user_id',$req->user_id)->value('password');
         $user_status = User::where('user_id',$req->user_id)->value('dlflag');
-
         if($user_status === '3'){
             Log::info('退会者');
             return redirect()->back();
         }
 
-        Log::info($user_id);
-        Log::info($password);
+        if(Hash::check($req->password, $password1)){
+            $credentials = $req->only('email', 'password');
 
-        if(Hash::check($req->password, $password)){
-
-            $credentials = $req->only('user_id', 'password');
-            
             Log::info($credentials);
             if(Auth::attempt($credentials)){
                 Log::info('ログイン成功');
-                return view('/mypage');
+                $user = $req->all();
+                return view('/message/resultlogin',compact('user'));
             }else {
-                Log::info('ログイン失敗');
+                Log::info('メールアドレスが違う');
                 return redirect()->back();
             }
         }else{
-            Log::info('パスワード失敗');
+            Log::info('パスワードが違う');
             return redirect()->back();
         }   
     }
+
     public function logout(){
-        \Log::debug('ログアウト OK!');
+        
         Auth::logout();
-        //mash パスの処理 fix Start
-        return redirect('/welcome')->with('user_msg', 'ログアウトしました。');
-        //mash パスの修正 fix End
+        \Log::debug('ログアウト成功');
+        return redirect('/index');
     }
 }
