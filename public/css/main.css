@@ -947,6 +947,112 @@ iframe {
   transform: rotate(45deg);
 }
 
+/*ラーメン店主様ご利用の場合
+--------------------------------*/
+.ramen-shop {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-ramenshop {
+  margin: 0 auto;
+  text-align: center;
+  width: 60vw;
+}
+
+.ramen-shop-text {
+  text-align: left;
+}
+
+.ramen-shop-button {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #000066;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #000066;    /* 枠の指定 */
+}
+.ramen-shop-button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #000066;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+/* お店新規登録
+--------------------------------- */
+.wrapper-ramenshop {
+  /*ページの最大幅と余白を指定*/
+  background: #ededed;
+  width: 80vw;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+.shopregi-grid {
+  display: grid;
+  margin: 20px;
+  font-size: 20px;
+/*  margin-right: 200px;*/
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+}
+.shopregi-item{
+  width: 65%;
+  margin-left: 2vw;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 2px solid gray;
+}
+
+.shopregi-item-1 {
+  margin-left: 13vw;
+  width:60%;
+  font-size: 16px;
+  text-align: left;
+  border-bottom: 2px solid gray;
+}
+
+.shopregi-submit{
+  color: aliceblue;
+  margin: 0 auto;
+}
+.button{
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #000066;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #000066;    /* 枠の指定 */
+}
+
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #000066;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+.shopregi-result {
+  display:inline-block;
+  margin:25vh 0 20vh 36vw;
+  font-size: 20px;
+}
+.shopregi-result:hover {
+  opacity:.6;
+  transition-duration:0.8s;
+  transition: all  0.5s ease; 
+  background: chocolate;
+  border-radius: 10px;
+}
+
 /*レスポンシブ対応
 ---------------------------------*/
 @media (max-width: 1024px) {
@@ -1146,5 +1252,72 @@ iframe {
 
   label:before {
     font-size: 16px;
+  }
+  /* お店新規登録
+  --------------------------------- */
+  .wrapper-ramenshop {
+    /*ページの最大幅と余白を指定*/
+    position: relative;
+    background: #ededed;
+    width: 90vw;
+    margin: 0 auto;
+    padding: 0 4vw;
+  }
+
+  .shopregi-grid {
+    display: grid;
+    margin: 10vw;
+    font-size: 20px;
+  /*  margin-right: 200px;*/
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  }
+  .shopregi-item{
+    width: 80%;
+    margin-left: 8vw;
+    border-bottom: 2px solid gray;
+  }
+  .shopregi-item-1{
+    width: 80%;
+    margin-left: 8vw;
+    border-bottom: 2px solid gray;
+    
+  }
+  .shopregi-submit{
+    color: aliceblue;
+    margin: 0 auto;
+  }
+  .button{
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 18pt;        /* 文字サイズ */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #000066;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+    border        : 2px solid #000066;    /* 枠の指定 */
+  }
+
+  .button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #000066;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+  }
+
+  .shopregi-result {
+    display:inline-block;
+    margin:25vh 0 20vh 36vw;
+    font-size: 20px;
+  }
+  .shopregi-result:hover {
+    opacity:.6;
+    transition-duration:0.8s;
+    transition: all  0.5s ease; 
+    background: chocolate;
+    border-radius: 10px;
+  }
+  .shopregi-item input {
+    font-size: 10px;
   }
 }
