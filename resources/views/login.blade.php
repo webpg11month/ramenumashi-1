@@ -25,10 +25,10 @@
         <!-- 背景画像読込=home -->
         <div id="ramen-home" class="big-bg">
           <div class="page-header wrapper">
-            <a class="logo-flex" href="{{ url('/index') }}">
+            <a class="logo-flex" href="{{ url('/') }}">
               <img class="fade-main" id="ramen-logo" src="img/logo/ramen-log.png" alt="">
             </a>
-            <a class="logo-flex" href="{{ url('/index') }}">
+            <a class="logo-flex" href="{{ url('/') }}">
               <h1  id="logo-font">
                 RamenUmashi
               </h1>
@@ -127,6 +127,7 @@
               <input type="password" name="password" value="{{ old('password') }}" >
             </div>
           </div>
+          ※登録されていない場合は、<a href="{{ url('/register') }}">新規登録</a>へお願いします。
           <div class="login-submit">
             <input type="submit" name="submit" value="ログイン"  class="button">
           </div>
