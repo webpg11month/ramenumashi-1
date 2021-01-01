@@ -1,8 +1,8 @@
-php artisan make:migration create_user_tb_table
+php artisan make:migration create_shop_tb_table
 
 php artisan migrate
 
-php artisan make:controller MypageController
+php artisan make:controller Shop/ShopRegisterController
 
 php artisan make:model Model/UserLogic
 
@@ -12,3 +12,5 @@ use Illuminate\Support\Facades\Log;
 Log::info('test');
 
 php artisan  make:middleware LoginCheckMiddleware;
+
+php artisan storage:link
