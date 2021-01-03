@@ -14,13 +14,15 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class LoginController extends Controller
 {    
+    //user:tsss@test.ne.jp
+    //pass:mashmash! 
 
     public function userLogin(UserLoginRequest $req){
         $data = $req->all();
         $email =User::where('email',$req->email)->value('email');
         $password1 = User::where('email',$req->email)->value('password');
 
-        $user_status = User::where('user_id',$req->email)->value('dlflag');
+        $user_status = User::where('email',$req->email)->value('dlflag');
         if($user_status === '3'){
             Log::info('退会者');
             return redirect()->back();
@@ -49,6 +51,6 @@ class LoginController extends Controller
         
         Auth::logout();
         \Log::debug('ログアウト成功');
-        return redirect('/index');
+        return redirect('/');
     }
 }
