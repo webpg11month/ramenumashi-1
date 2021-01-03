@@ -63,6 +63,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         /*追加*/
         'loginCheck' => \App\Http\Middleware\LoginCheckMiddleware::class,
+        'shopLoginCheck' => \App\Http\Middleware\ShopLoginCheckMiddleware::class,
     ];
 
     /**
