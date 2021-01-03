@@ -146,7 +146,7 @@
             </th>
             <tr>
               <td>
-                <input type="search" name="shop_name" value="" placeholder="お店名でさがす">
+                <input type="search" name="shop" value="" placeholder="お店名でさがす">
               </td>
             </tr>
             <th>
