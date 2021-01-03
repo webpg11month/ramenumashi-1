@@ -23,7 +23,8 @@ class CreateShopTbTable extends Migration
             $table->string('shop_address',255);       
             $table->bigInteger('seat');             
             $table->bigInteger('show_data');    
-            $table->enum('dlflag', ['1','2','3']);     
+            $table->enum('dlflag', ['1','2','3']);
+            $table->string('avarage_price');      
             $table->string('img',255)->nullable();
             $table->string('img1',255)->nullable();
             $table->string('img2',255)->nullable();
