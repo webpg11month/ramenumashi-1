@@ -17,7 +17,7 @@ class LoginCheckMiddleware
     public function handle($request, Closure $next, $guard = null)
     {
         //ログイン中の場合、マイページ画面へ
-        $guard = 'web';
+        $guard = 'user';
         if (Auth::guard($guard)->check()) {
                return redirect('/message/resultlogin');
         }
