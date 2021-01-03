@@ -11,7 +11,7 @@
   <link href="css/main.css" rel="stylesheet">
   <link href="css/footer.css" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  {{-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> --}}
   <link href="css/ress.css" rel="stylesheet">
   <!-- ファビコン -->
   <link rel="icon" type="img/png" href="img/favicon/favicon.png">
@@ -140,7 +140,7 @@
           <a href="">口コミ</a>
         </li>
       </ul>
-      <selection id="location">
+      <section id="location">
         <div class="wrapper">
           <div class="location-map">
             <img class="fade-main" src="img/main/ramen-list.jpg" alt="ラーメン画像">
@@ -154,11 +154,11 @@
                 </tr>
                 <tr>
                   <td class="shop-table-td">残座席数</td>
-                  <td class="shop-table-td">2席</td>
+                  <td class="shop-table-td">{{ $shop->seat }}席</td>
                 </tr>
                 <tr>
                   <td class="shop-table-td">平均価格</td>
-                  <td class="shop-table-td">0円～2000円</td>
+                  <td class="shop-table-td">{{ $shop->avarage_price }}</td>
                 </tr>
                 <tr>
                   <td class="shop-table-td">予約時刻</td>
@@ -194,7 +194,7 @@
                 <h1>アクセス情報</h1>
                 <tr>
                   <td class="shop-table-td">住所</td>
-                  <td class="shop-table-td">大阪府うどん市パスタ町１－１４ー１１</td>
+                  <td class="shop-table-td">{{ $shop->shop_address }}</td>
                 </tr>
                 <tr>
                   <td class="shop-table-td">決済</td>
@@ -214,9 +214,15 @@
         </div>
         <hr style="width: 1200px; margin: 0 auto;">
         @endforeach
-          {{ $shops->links() }}
+        <div class="pager-links">
+          {{-- {{ $shops->appends(Request::only('keyword'))->links() }} --}}
+          {{-- {{$shops->appends(request()->input())->render()}} --}}
+          {{-- {!!$shops->appends(['keyword','keyword1'])->render()!!} --}}
+          {{-- {!!$shops->appends(['shop_name'=>$shop_name,'shop_address'=>$shop_address])->render()!!}} --}}
+          {{$shops->appends(request()->input())->render()}}
+
         </div>
-      </selection>
+      </section>
     </main>
     <footer>
       <nav class="footer-nav-list">
