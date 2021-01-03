@@ -38,9 +38,6 @@
           <nav class="header-nav-list">
             <ul class="main-nav">
               <li>
-                <a class="header-link1-1" href="{{ url('/login') }}">Login</a>
-              </li>
-              <li>
                 <a class="header-link1-1" href="{{ url('/umashi') }}">RamenUmashiについて</a>
               </li>
               <li>
@@ -72,9 +69,6 @@
                     <a href="{{ url('/help') }}">ヘルプ</a>
                   </li><!-- /.hamburger-item -->
                   <li class="hamburger-item">
-                    <a href="{{ url('/login') }}">ログイン</a>
-                  </li><!-- /.hamburger-item -->
-                  <li class="hamburger-item">
                     <a href="{{ url('/umashi') }}">RamenUmashiとは</a>
                   </li><!-- /.hamburger-item -->
                   <li class="hamburger-item">
@@ -94,9 +88,11 @@
       </div>
     </header>
     <main>
-      <h1 id="wrapper-main-regi">新規登録ありがとうございます！！</h1>
+      <h1 id="wrapper-main-regi">ログイン完了です</h1>
         
-      <a class="register-result" href="{{ url('/login') }}">Login</a>へ
+      <a class="register-result" href="{{ url('/mypage') }}">
+        @csrf
+        お店管理画面</a>へ
     </main>
     <footer>
       <nav class="footer-nav-list">

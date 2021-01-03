@@ -11,6 +11,7 @@
   <link href="css/main.css" rel="stylesheet">
   <link href="css/footer.css" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="css/ress.css" rel="stylesheet">
   <!-- ファビコン -->
   <link rel="icon" type="img/png" href="img/favicon/favicon.png">
@@ -25,10 +26,10 @@
       <!-- 背景画像読込=home -->
       <div id="ramen-home" class="big-bg">
         <div class="page-header wrapper">
-          <a class="logo-flex" href="{{ url('/index') }}">
+          <a class="logo-flex" href="{{ url('/') }}">
             <img class="fade-main" id="ramen-logo" src="img/logo/ramen-log.png" alt="">
           </a>
-          <a class="logo-flex" href="{{ url('/index') }}">
+          <a class="logo-flex" href="{{ url('/') }}">
             <h1  id="logo-font">
               RamenUmashi
             </h1>
@@ -36,17 +37,29 @@
           <!-- 修正箇所 -->
           <nav class="header-nav-list">
             <ul class="main-nav">
-              <li>
-                <a class="header-link1-1" href="{{ url('/login') }}">Login</a>
+              @guest
+                <li>
+                  <a class="header-link1-1" href="{{ url('/login') }}">Login</a>
+                </li>
+                <li>
+                  <a class="header-link1-1" href="{{ url('/register') }}">Register</a>
+                </li>
+              @endguest
+              @auth
+                <li>
+                  <a class="header-link1-1" href="{{ url('/mypage') }}">マイページ</a>
+                </li>
+                <li>
+                <a class="header-link1-1" href="{{ url('/logout') }}">
+                  ログアウト
+                </a>
               </li>
-              <li>
-                <a class="header-link1-1" href="{{ url('/register') }}">Register</a>
-              </li>
+              @endauth
               <li>
                 <a class="header-link1-1" href="{{ url('/umashi') }}">RamenUmashiについて</a>
               </li>
               <li>
-                <a class="header-link1-1" href="{{ url('/umashi') }}">ラーメン店主様ご利用の場合</a>
+                <a class="header-link1-1" href="{{ url('/shop/shop_info') }}">ラーメン店主様ご利用の場合</a>
               </li>
             </ul>
           </nav>
@@ -99,6 +112,9 @@
       </div>
     </header>
     <main class="main-width">
+    </form>
+    @foreach ($shops as $shop)
+      <input type="hidden" name="password[]" value={{ $shop->password }}>
       <ul class="gnav">
         <li id="shop-top">
           <a href="">店舗トップ</a>
@@ -134,7 +150,7 @@
                 <h1 id="shop-info">店舗情報</h1>
                 <tr>
                   <td class="shop-table-td">店舗名</td>
-                  <td class="shop-table-td">うどん屋aX@:*aaaa</td>
+                  <td class="shop-table-td">{{ $shop->shop_name }}</td>
                 </tr>
                 <tr>
                   <td class="shop-table-td">残座席数</td>
@@ -145,7 +161,7 @@
                   <td class="shop-table-td">0円～2000円</td>
                 </tr>
                 <tr>
-                  <td class="shop-table-td">時刻</td>
+                  <td class="shop-table-td">予約時刻</td>
                   <td class="shop-table-td">2020-12-12-14:11</td>
                 </tr>
                 <tr>
@@ -195,6 +211,10 @@
               </table>
             </form>
           </div>
+        </div>
+        <hr style="width: 1200px; margin: 0 auto;">
+        @endforeach
+          {{ $shops->links() }}
         </div>
       </selection>
     </main>

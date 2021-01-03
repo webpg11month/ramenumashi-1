@@ -26,10 +26,10 @@
       <!-- 背景画像読込=home -->
       <div id="ramen-home" class="big-bg">
         <div class="page-header wrapper">
-          <a class="logo-flex" href="{{ url('/index') }}">
+          <a class="logo-flex" href="{{ url('/') }}">
             <img class="fade-main" id="ramen-logo" src="../img/logo/ramen-log.png" alt="">
           </a>
-          <a class="logo-flex" href="{{ url('/index') }}">
+          <a class="logo-flex" href="{{ url('/') }}">
             <h1  id="logo-font">
               RamenUmashi
             </h1>
@@ -47,7 +47,7 @@
                   <a class="header-link1-1" href="{{ url('/umashi') }}">RamenUmashiについて</a>
                 </li>
                 <li>
-                  <a class="header-link1-1" href="{{ url('/umashi') }}">ラーメン店主様ご利用の場合</a>
+                  <a class="header-link1-1" href="{{ url('/shop/shop_info') }}">ラーメン店主様ご利用の場合</a>
                 </li>
             </ul>
           </nav>
@@ -149,7 +149,7 @@
             </th>
             <tr>
               <td>
-                <input class="date-search-response" type="date" name="date-search" value="2020-12-22" placeholder="日付">
+                <input type="date" name="date-search" class="date-search-response" value="" placeholder="日付">
               </td>
             </tr>
             <tr>
@@ -209,19 +209,19 @@
           <div class="main-access-rank">
             <div id="main-access-item4">
                 <h1 class="main-rank-item">1位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img class="fade-main" src="../img/main/ramen-list.jpg" alt="ラーメン"></a>
+              <a class="hover-index" href="{{ url('/shop') }}"><img src="{{asset('storage/image/'.$img2)}}" alt="ラーメン"></a>
               <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
               </p>
             </div>
             <div id="main-access-item5">
                 <h1 class="main-rank-item">2位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img class="fade-main" src="../img/main/ramen-list.jpg" alt="ラーメン"></a>
+              <a class="hover-index" href="{{ url('/shop') }}"><img src="{{asset('storage/image/'.$img2)}}" alt="ラーメン"></a>
               <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
               </p>
             </div>
             <div id="main-access-item6">
                 <h1 class="main-rank-item">3位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img class="fade-main" src="../img/main/ramen-list.jpg" alt="ラーメン"></a>
+              <a class="hover-index" href="{{ url('/shop') }}"><img src="{{asset('storage/image/'.$img2)}}" alt="ラーメン"></a>
               <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
               </p>
             </div>

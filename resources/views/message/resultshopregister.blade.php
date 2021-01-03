@@ -7,18 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ラーメン検索とラーメン空き情報を確認できる">
   <!-- CSS読込み -->
-  <link href="css/header.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
-  <link href="css/footer.css" rel="stylesheet">
+  <link href="../css/header.css" rel="stylesheet">
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="../css/footer.css" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <link href="css/ress.css" rel="stylesheet">
+  <link href="../css/ress.css" rel="stylesheet"> 
+
   <!-- ファビコン -->
   <link rel="icon" type="img/png" href="img/favicon/favicon.png">
   <!-- タイトル -->
-  <title>RamenUmashi | Umashi</title>
+  <title>RamenUmashi | ShopRegister</title>
 </head>
 
-<body class="fade-main">
+<body>
   <div class="wrapper-header">
     <header>
       <!-- 修正箇所 -->
@@ -26,7 +27,7 @@
       <div id="ramen-home" class="big-bg">
         <div class="page-header wrapper">
           <a class="logo-flex" href="{{ url('/') }}">
-            <img class="fade-main" id="ramen-logo" src="img/logo/ramen-log.png" alt="">
+            <img class="fade-main" id="ramen-logo" src="../img/logo/ramen-log.png" alt="">
           </a>
           <a class="logo-flex" href="{{ url('/') }}">
             <h1  id="logo-font">
@@ -36,24 +37,12 @@
           <!-- 修正箇所 -->
           <nav class="header-nav-list">
             <ul class="main-nav">
-              @guest
-                <li>
-                  <a class="header-link1-1" href="{{ url('/login') }}">Login</a>
-                </li>
-                <li>
-                  <a class="header-link1-1" href="{{ url('/register') }}">Register</a>
-                </li>
-              @endguest
-              @auth
-                <li>
-                    <a class="header-link1-1" href="{{ url('/mypage') }}">マイページ</a>
-                </li>
-                <li>
-                  <a class="header-link1-1" href="{{ url('/logout') }}">
-                    ログアウト
-                  </a>
-                </li>
-              @endauth
+              <li>
+                <a class="header-link1-1" href="{{ url('/login') }}">Login</a>
+              </li>
+              <li>
+                <a class="header-link1-1" href="{{ url('/umashi') }}">RamenUmashiについて</a>
+              </li>
               <li>
                 <a class="header-link1-1" href="{{ url('/shop/shop_info') }}">ラーメン店主様ご利用の場合</a>
               </li>
@@ -83,14 +72,17 @@
                     <a href="{{ url('/help') }}">ヘルプ</a>
                   </li><!-- /.hamburger-item -->
                   <li class="hamburger-item">
-                    <a href="{{ url('/register') }}">新規登録</a>
+                    <a href="{{ url('/login') }}">ログイン</a>
                   </li><!-- /.hamburger-item -->
                   <li class="hamburger-item">
-                    <a href="{{ url('/login') }}">ログイン</a>
+                    <a href="{{ url('/umashi') }}">RamenUmashiとは</a>
                   </li><!-- /.hamburger-item -->
                   <li class="hamburger-item">
                     <a href="{{ url('/role') }}">利用規約</a>
                   </li><!-- /.hamburger-item -->
+                  <li class="hamburger-item">
+                    <a href="{{ url('/cancellation') }}">ラーメン店主様ご利用の場合</a>
+                  </li>
                 </ul><!-- /.hamburger-list -->
               </div>
               <div id="hamburger-footer-contents">
@@ -101,47 +93,10 @@
         </div>
       </div>
     </header>
-    <main class="wrapper-umashi">
-     <h1 class="main-umashi-center">RamenUmashiとは</h1>
-      <section class="umashi-flex">
-       <div class="umashi-special">
-          <p id="umashi-item" >Umashiのここがすごい</p>
-          <img class="fade-main" id="umashi-item2" src="img/main/ramen-list.jpg" alt="sample_img">
-        </div>
-        <article>
-          <p id="umashi-text">
-            この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！
-          </p>
-        </article>
-      </section>
-      <section class="umashi-flex">
-       <div class="umashi-special">
-          <p id="umashi-item3">Umashiのここがすごい</p>
-          <img class="fade-main1" id="umashi-item4" src="img/main/ramen-list.jpg" alt="sample_img">
-        </div>
-        <article>
-          <h1>
-            
-          </h1>
-          <p id="umashi-text">
-            この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！
-          </p>
-        </article>
-      </section>
-      <section class="umashi-flex">
-       <div class="umashi-special">
-          <p id="umashi-item5">Umashiのここがすごい</p>
-          <img class="fade-main1" id="umashi-item6" src="img/main/ramen-list.jpg" alt="sample_img">
-        </div>
-        <article>
-          <h1>
-            
-          </h1>
-          <p id="umashi-text">
-            この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！この一杯に感動を！！！！！
-          </p>
-        </article>
-      </section>
+    <main>
+      <h1 id="wrapper-main-regi">ご店主様新規登録ありがとうございます！！</h1>
+        
+      {{-- <a class="register-result" href="{{ url('/login') }}">Login</a>へ --}}
     </main>
     <footer>
       <nav class="footer-nav-list">
@@ -165,9 +120,6 @@
           </li>
           <li>
             <a class="footer-link1-1" href="{{ url('/cancellation') }}">解約</a>
-          </li>
-          <li class="hamburger-item">
-            <a href="{{ url('/cancellation') }}">ラーメン店主様ご利用の場合</a>
           </li>
         </ul>
       </nav>
@@ -195,6 +147,7 @@
     </footer>
     <div id="page_top"><a href="#"></a></div>
   </div>
+  <script type="text/javascript" src="check.js"></script>
 </body>
 
 </html>

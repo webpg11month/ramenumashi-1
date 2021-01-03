@@ -26,10 +26,10 @@
       <!-- 背景画像読込=home -->
       <div id="ramen-home" class="big-bg">
         <div class="page-header wrapper">
-          <a class="logo-flex" href="{{ url('/index') }}">
+          <a class="logo-flex" href="{{ url('/') }}">
             <img class="fade-main" id="ramen-logo" src="img/logo/ramen-log.png" alt="">
           </a>
-          <a class="logo-flex" href="{{ url('/index') }}">
+          <a class="logo-flex" href="{{ url('/') }}">
             <h1  id="logo-font">
               RamenUmashi
             </h1>
@@ -59,7 +59,7 @@
                   <a class="header-link1-1" href="{{ url('/umashi') }}">RamenUmashiについて</a>
                 </li>
                 <li>
-                  <a class="header-link1-1" href="{{ url('/umashi') }}">ラーメン店主様ご利用の場合</a>
+                  <a class="header-link1-1" href="{{ url('/shop/shop_info') }}">ラーメン店主様ご利用の場合</a>
                 </li>
             </ul>
           </nav>
@@ -119,7 +119,7 @@
         </div>
       </div>
       <div class="home-content">
-        <form action="shop.html" method="get">
+        <form action="{{action('SearchController@search')}}" method="get">
           <div class="ramen-search-nav">
             <div class="anxiy-item">
               <input class="ramen-search-size" type="search" name="shop" placeholder="お店名でさがす" value="">
@@ -128,7 +128,7 @@
               <input class="ramen-search-size" type="search" name="area" placeholder="地域" value="">
             </div>
             <div class="anxiy-item">
-              <input class="ramen-search-size-date" type="date" name="" value="2020-12-22">
+              <input class="ramen-search-size-date" type="date" name="date" value="">
             </div>
             <div class="anxiy-item">
               <input id="ramen-search-submit" type="submit" value="検索">
@@ -138,14 +138,15 @@
       </div>
 
       <div class="home-content-1">
-        <form action="{{ url('/shop') }}" method="get">
+        <form action="{{action('SearchController@search')}}" method="get">
+
           <table class="search-table-response">
             <th>
               検索
             </th>
             <tr>
               <td>
-                <input type="search" name="shop" value="" placeholder="お店名でさがす">
+                <input type="search" name="shop_name" value="" placeholder="お店名でさがす">
               </td>
             </tr>
             <th>
@@ -221,19 +222,19 @@
           <div class="main-access-rank">
             <div id="main-access-item4">
                 <h1 class="main-rank-item">1位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img class="fade-main" src="img/main/ramen-list.jpg" alt="ラーメン"></a>
+              <a class="hover-index" href="{{ url('/shop') }}"><img src="{{asset('storage/image/'.$img)}}" alt="ラーメン１"></a>
               <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
               </p>
             </div>
             <div id="main-access-item5">
                 <h1 class="main-rank-item">2位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img class="fade-main" src="img/main/ramen-list.jpg" alt="ラーメン"></a>
+              <a class="hover-index" href="{{ url('/shop') }}"><img src="{{asset('storage/image/'.$img1)}}" alt="ラーメン２"></a>
               <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
               </p>
             </div>
             <div id="main-access-item6">
                 <h1 class="main-rank-item">3位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img class="fade-main" src="img/main/ramen-list.jpg" alt="ラーメン"></a>
+              <a class="hover-index" href="{{ url('/shop') }}"><img src="{{asset('storage/image/'.$img2)}}" alt="ラーメン３"></a>
               <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
               </p>
             </div>
