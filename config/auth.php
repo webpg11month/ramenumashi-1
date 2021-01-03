@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'user',
         'passwords' => 'users',
     ],
 
@@ -36,11 +36,16 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'user' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
-
+        //追加
+        'shop' => [
+            'driver' => 'session',
+            'provider' => 'shop_tb', 
+        ],
+        //追加
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -72,7 +77,12 @@ return [
             //修正
             'model' => App\Table\User::class,
         ],
-
+        //追加
+        'shop_tb' => [
+            'driver' => 'eloquent',
+            'model' => App\Table\Shop::class,
+        ],
+        //追加
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -97,6 +107,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'shop_tb' => [
+            'provider' => 'shop_tb',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

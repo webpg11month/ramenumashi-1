@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 
 //インデックス画面へ画面遷移
-Route::get('/index','IndexController@index');
+Route::get('/','IndexController@index');
 
 //新規登録画面へ画面遷移
 Route::get('/register','IndexController@register');
@@ -49,7 +49,35 @@ Route::get('/shop','IndexController@shop');
 // 新規登録処理 
 Route::post('/message/resultregister','RegisterController@userRegister');
 
-//ログイン画面へ画面遷移 
-Route::get('/login','IndexController@login');
-//ログイン画面へ画面遷移
-Route::post('/mypage','LoginController@userLogin');
+Route::group(["middleware"=> "loginCheck"], function() {
+    //ログイン画面へ画面遷移 
+    Route::get('/login','IndexController@login');
+    //ログイン結果画面へ画面遷移
+    Route::post('/message/resultlogin','LoginController@userLogin');
+});
+
+//ログイン中
+Route::group(["middleware"=> "guest"], function() {
+    Route::get('/logout','LoginController@logout');
+    Route::get('/mypage/index','MypageController@index');
+    Route::get('/mypage','MypageController@mypage');
+});
+
+
+//お店画面画面へ画面遷移
+Route::get('/shop/shop_info','IndexController@shopinfo');
+
+Route::get('/shop/shop_register','IndexController@shopRegister');
+
+Route::post('/message/resultshopregister','Shop\ShopRegisterController@shopRegisterResult');
+
+//お店ログイン画面
+Route::get('/shop/shop_login','IndexController@shopLogin');
+
+Route::group(["middleware"=> "shopLoginCheck"], function() {
+    //お店ログイン画面へ画面遷移
+    Route::post('/message/resultshoplogin','Shop\ShopLoginController@shopLogin');
+});
+
+//お店検索結果
+Route::get('/shop','SearchController@search');

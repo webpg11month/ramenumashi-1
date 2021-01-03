@@ -25,10 +25,10 @@
       <!-- 背景画像読込=home -->
       <div id="ramen-home" class="big-bg">
         <div class="page-header wrapper">
-          <a class="logo-flex" href="{{ url('/index') }}">
+          <a class="logo-flex" href="{{ url('/') }}">
             <img class="fade-main" id="ramen-logo" src="img/logo/ramen-log.png" alt="">
           </a>
-          <a class="logo-flex" href="{{ url('/index') }}">
+          <a class="logo-flex" href="{{ url('/') }}">
             <h1  id="logo-font">
               RamenUmashi
             </h1>
@@ -43,7 +43,7 @@
                 <a class="header-link1-1" href="{{ url('/umashi') }}">RamenUmashiについて</a>
               </li>
               <li>
-                <a class="header-link1-1" href="{{ url('/umashi') }}">ラーメン店主様ご利用の場合</a>
+                <a class="header-link1-1" href="{{ url('/shop/shop_info') }}">ラーメン店主様ご利用の場合</a>
               </li>
             </ul>
           </nav>

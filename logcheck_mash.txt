@@ -1,14 +1,28 @@
-php artisan make:migration create_user_tb_table
+php artisan make:migration create_shop_tb_table
 
-php artisan make:controller LoginController
+php artisan migrate
+
+php artisan make:controller SeachController
 
 php artisan make:model Model/UserLogic
 
-php artisan make:request UserRegisterRequest
+php artisan make:request UserLoginRequest
 
 use Illuminate\Support\Facades\Log;
 Log::info('test');
 
-php artisan  make:middleware LoginCheckMiddleware;
+php artisan  make:middleware ShopLoginCheckMiddleware;
 
-test
+php artisan storage:link
+
+※カラム名変更
+ALTER TABLE shop_tb CHANGE COLUMN shop_pass password varchar(255) NOT NULL;
+
+select img from shop_tb where show_data = (select show_data from shop_tb order by show_data desc limit 0,1);
+自動化テスト
+php artisan make:test UserTest
+
+ダミーデータ作成
+php artisan make:seeder ShopTableSeeder
+データ作成
+select id from ramenumashi.shop_tb order by show_data desc, id desc limit 1 offset 0;

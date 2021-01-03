@@ -7,13 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ラーメン検索とラーメン空き情報を確認できる">
   <!-- CSS読込み -->
-  <link href="css/header.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
-  <link href="css/footer.css" rel="stylesheet">
+  <link href="../css/header.css" rel="stylesheet">
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="../css/footer.css" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <link href="css/ress.css" rel="stylesheet">
+  <link href="../css/ress.css" rel="stylesheet">
   <!-- ファビコン -->
-  <link rel="icon" type="img/png" href="img/favicon/favicon.png">
+  <link rel="icon" type="img/png" href="../img/favicon/favicon.png">
   <!-- タイトル -->
   <title>RamenUmashi</title>
 </head>
@@ -27,7 +27,7 @@
       <div id="ramen-home" class="big-bg">
         <div class="page-header wrapper">
           <a class="logo-flex" href="{{ url('/') }}">
-            <img class="fade-main" id="ramen-logo" src="img/logo/ramen-log.png" alt="">
+            <img class="fade-main" id="ramen-logo" src="../img/logo/ramen-log.png" alt="">
           </a>
           <a class="logo-flex" href="{{ url('/') }}">
             <h1  id="logo-font">
@@ -37,24 +37,12 @@
           <!-- 修正箇所 -->
           <nav class="header-nav-list">
             <ul class="main-nav">
-              @guest
-                <li>
-                  <a class="header-link1-1" href="{{ url('/login') }}">Login</a>
-                </li>
-                <li>
-                  <a class="header-link1-1" href="{{ url('/register') }}">Register</a>
-                </li>
-              @endguest
-              @auth
                 <li>
                   <a class="header-link1-1" href="{{ url('/mypage') }}">マイページ</a>
                 </li>
                 <li>
-                <a class="header-link1-1" href="{{ url('/logout') }}">
-                  ログアウト
-                </a>
-              </li>
-              @endauth
+                  <a class="header-link1-1" href="{{ url('/logout') }}">ログアウト</a>
+                </li>
                 <li>
                   <a class="header-link1-1" href="{{ url('/umashi') }}">RamenUmashiについて</a>
                 </li>
@@ -81,16 +69,16 @@
               <div class="hamburger-main-contents">
                 <ul class="hamburger-list">
                   <li class="hamburger-item">
+                    <a href="{{ url('/logout') }}">ログアウト</a>
+                  </li><!-- /.hamburger-item -->
+                  <li class="hamburger-item">
+                    <a href="{{ url('/mypage') }}">マイページへ</a>
+                  </li><!-- /.hamburger-item -->
+                  <li class="hamburger-item">
                     <a href="{{ url('/contact') }}">問い合わせ</a>
                   </li><!-- /.hamburger-item -->
                   <li class="hamburger-item">
                     <a href="{{ url('/help') }}">ヘルプ</a>
-                  </li><!-- /.hamburger-item -->
-                  <li class="hamburger-item">
-                    <a href="{{ url('/register') }}">新規登録</a>
-                  </li><!-- /.hamburger-item -->
-                  <li class="hamburger-item">
-                    <a href="{{ url('/login') }}">ログイン</a>
                   </li><!-- /.hamburger-item -->
                   <li class="hamburger-item">
                     <a href="{{ url('/umashi') }}">RamenUmashiとは</a>
@@ -119,7 +107,7 @@
         </div>
       </div>
       <div class="home-content">
-        <form action="{{action('SearchController@search')}}" method="get">
+        <form action="shop.html" method="get">
           <div class="ramen-search-nav">
             <div class="anxiy-item">
               <input class="ramen-search-size" type="search" name="shop" placeholder="お店名でさがす" value="">
@@ -128,7 +116,7 @@
               <input class="ramen-search-size" type="search" name="area" placeholder="地域" value="">
             </div>
             <div class="anxiy-item">
-              <input class="ramen-search-size-date" type="date" name="date" value="">
+              <input class="ramen-search-size-date" type="date" name="" value="2020-12-22">
             </div>
             <div class="anxiy-item">
               <input id="ramen-search-submit" type="submit" value="検索">
@@ -138,8 +126,7 @@
       </div>
 
       <div class="home-content-1">
-        <form action="{{action('SearchController@search')}}" method="get">
-
+        <form action="{{ url('/shop') }}" method="get">
           <table class="search-table-response">
             <th>
               検索
@@ -162,7 +149,7 @@
             </th>
             <tr>
               <td>
-                <input class="date-search-response" type="date" name="date-search" value="2020-12-22" placeholder="日付">
+                <input type="date" name="date-search" class="date-search-response" value="" placeholder="日付">
               </td>
             </tr>
             <tr>
@@ -182,13 +169,13 @@
       <h1 id="wrapper-main-login">おすすめラーメン</h1>
       <div class="slider">
         <div  class="slider-content">
-         <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="ラーメン１"></a>
+         <a class="hover-index" href="shop.html"><img src="../img/main/ramen-list.jpg" alt="ラーメン１"></a>
         </div>
         <div class="slider-content">
-         <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="ラーメン２"></a>
+         <a class="hover-index" href="shop.html"><img src="../img/main/ramen-list.jpg" alt="ラーメン２"></a>
         </div>
         <div class="slider-content">
-         <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="ラーメン３"></a>
+         <a class="hover-index" href="shop.html"><img src="../img/main/ramen-list.jpg" alt="ラーメン３"></a>
         </div>
       </div>
       <div class="main-header wrapper">
@@ -200,17 +187,17 @@
           <div class="main-access-rank">
             <div id="main-access-item1">
                 <h1 class="main-rank-item">1位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img src="img/main/ramen-list.jpg" alt="ラーメン"></a>
+              <a class="hover-index" href="{{ url('/shop') }}"><img src="../img/main/ramen-list.jpg" alt="ラーメン"></a>
               <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest</p>
             </div>
             <div id="main-access-item2">
                 <h1 class="main-rank-item">2位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img src="img/main/ramen-list.jpg" alt="ラーメン"></a>
+              <a class="hover-index" href="{{ url('/shop') }}"><img src="../img/main/ramen-list.jpg" alt="ラーメン"></a>
               <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest</p>
             </div>
             <div id="main-access-item3">
               <h1 class="main-rank-item">3位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img src="img/main/ramen-list.jpg" alt="ラーメン"></a>
+              <a class="hover-index" href="{{ url('/shop') }}"><img src="../img/main/ramen-list.jpg" alt="ラーメン"></a>
               <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
               </p>
             </div>
@@ -222,19 +209,19 @@
           <div class="main-access-rank">
             <div id="main-access-item4">
                 <h1 class="main-rank-item">1位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img src="{{asset('storage/image/'.$img)}}" alt="ラーメン１"></a>
+              <a class="hover-index" href="{{ url('/shop') }}"><img src="{{asset('storage/image/'.$img2)}}" alt="ラーメン"></a>
               <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
               </p>
             </div>
             <div id="main-access-item5">
                 <h1 class="main-rank-item">2位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img src="{{asset('storage/image/'.$img1)}}" alt="ラーメン２"></a>
+              <a class="hover-index" href="{{ url('/shop') }}"><img src="{{asset('storage/image/'.$img2)}}" alt="ラーメン"></a>
               <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
               </p>
             </div>
             <div id="main-access-item6">
                 <h1 class="main-rank-item">3位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img src="{{asset('storage/image/'.$img2)}}" alt="ラーメン３"></a>
+              <a class="hover-index" href="{{ url('/shop') }}"><img src="{{asset('storage/image/'.$img2)}}" alt="ラーメン"></a>
               <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
               </p>
             </div>
