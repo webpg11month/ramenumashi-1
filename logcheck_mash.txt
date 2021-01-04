@@ -24,6 +24,12 @@ php artisan make:test UserTest
 
 ダミーデータ作成
 php artisan make:seeder ShopTableSeeder
+
+準備
+composer dump-autoload
+実行
+php artisan db:seed
+
 データ作成
 select id from ramenumashi.shop_tb order by show_data desc, id desc limit 1 offset 0;
 
