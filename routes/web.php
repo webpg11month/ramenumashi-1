@@ -77,6 +77,7 @@ Route::get('/shop/shop_login','IndexController@shopLogin');
 Route::group(["middleware"=> "shopLoginCheck"], function() {
     //お店ログイン画面へ画面遷移
     Route::post('/message/resultshoplogin','Shop\ShopLoginController@shopLogin');
+    Route::get('shop/logout','Shop\ShopLoginController@logout');
 });
 
 //お店検索結果

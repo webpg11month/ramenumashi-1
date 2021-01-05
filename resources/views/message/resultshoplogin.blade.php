@@ -37,6 +37,24 @@
           <!-- 修正箇所 -->
           <nav class="header-nav-list">
             <ul class="main-nav">
+              @guest
+                <li>
+                  <a class="header-link1-1" href="{{ url('shop/login') }}">マイページ</a>
+                </li>
+                <li>
+                <a class="header-link1-1" href="{{ url('shop/logout') }}">
+                  ログアウト
+                </a>
+              </li>
+              @endguest
+              @auth
+              <li>
+                <a class="header-link1-1" href="{{ url('shop/login') }}">Login</a>
+              </li>
+              <li>
+                <a class="header-link1-1" href="{{ url('/') }}">Register</a>
+              </li>
+              @endauth
               <li>
                 <a class="header-link1-1" href="{{ url('/umashi') }}">RamenUmashiについて</a>
               </li>

@@ -19,7 +19,8 @@ class ShopLoginCheckMiddleware
         
         if (!Auth::guard($guard)->check()) {
             Log::info('test2');
-               return redirect('/message/resultshoplogin');
+               //return redirect('/message/resultshoplogin');
+               return $next($request);
         }
         Log::info('test1');
         return $next($request);
