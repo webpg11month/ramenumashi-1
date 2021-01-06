@@ -13,6 +13,7 @@ Log::info('test');
 
 php artisan  make:middleware ShopLoginCheckMiddleware;
 
+リンク追加コマンド
 php artisan storage:link
 
 ※カラム名変更
