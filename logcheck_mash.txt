@@ -2,7 +2,7 @@ php artisan make:migration create_shop_tb_table
 
 php artisan migrate
 
-php artisan make:controller SeachController
+php artisan make:controller IndexController
 
 php artisan make:model Model/UserLogic
 
