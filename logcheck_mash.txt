@@ -30,6 +30,6 @@ php artisan make:seeder ShopTableSeeder
 composer dump-autoload
 実行
 php artisan db:seed
-test
+
 データ作成
 select id from ramenumashi.shop_tb order by show_data desc, id desc limit 1 offset 0;
