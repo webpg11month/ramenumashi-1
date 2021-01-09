@@ -104,15 +104,16 @@
         <h1 id="wrapper-main-cancellation">お客様解約</h1>
         <div class="wrapper-cancellation">
           <!--  グリッド-->
-          <form class="reig-center" action="index.html" method="POST">
+          <form class="reig-center" action="{{action('CancelController@userCancel')}}" method="POST">
+            @csrf
             <div class="main-cancellation-grid">
               <div class="main-cancellation-item">
                 <label class="required">
-                  ユーザーID：
+                  メールアドレス：
                 </label>
               </div>
               <div class="main-cancellation-item">
-                <input type="text" name="userid" value="" required>
+                <input type="text" name="userid" value="">
               </div>
             </div>
             <div class="main-cancellation-grid">
@@ -122,7 +123,7 @@
                 </label>
               </div>
               <div class="main-cancellation-item">
-                <input type="password" name="password" value="" required>
+                <input type="password" name="password" value="" >
               </div>
             </div>
             <div class="cancellation-submit">
