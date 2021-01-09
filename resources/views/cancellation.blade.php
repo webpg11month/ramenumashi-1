@@ -104,11 +104,11 @@
         <h1 id="wrapper-main-cancellation">お客様解約</h1>
         <div class="wrapper-cancellation">
           <!--  グリッド-->
-          <form class="reig-center" action="index.html" method="get">
+          <form class="reig-center" action="index.html" method="POST">
             <div class="main-cancellation-grid">
               <div class="main-cancellation-item">
                 <label class="required">
-                  ユーザー名またはユーザーID：
+                  ユーザーID：
                 </label>
               </div>
               <div class="main-cancellation-item">

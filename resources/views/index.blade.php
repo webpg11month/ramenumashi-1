@@ -14,6 +14,9 @@
   <link href="css/ress.css" rel="stylesheet">
   <!-- ファビコン -->
   <link rel="icon" type="img/png" href="img/favicon/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
   <!-- タイトル -->
   <title>RamenUmashi</title>
 </head>
