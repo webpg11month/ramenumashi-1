@@ -33,5 +33,3 @@ php artisan db:seed
 
 データ作成
 select id from ramenumashi.shop_tb order by show_data desc, id desc limit 1 offset 0;
-
-test
