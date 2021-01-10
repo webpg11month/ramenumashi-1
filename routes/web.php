@@ -49,6 +49,9 @@ Route::get('/shop','IndexController@shop');
 // 新規登録処理 
 Route::post('/message/resultregister','RegisterController@userRegister');
 
+//お客様解約処理
+Route::post('/message/cancellationresult','CancelController@userCancel');
+
 Route::group(["middleware"=> "loginCheck"], function() {
     //ログイン画面へ画面遷移 
     Route::get('/login','IndexController@login');
@@ -62,7 +65,6 @@ Route::group(["middleware"=> "guest"], function() {
     Route::get('/mypage/index','MypageController@index');
     Route::get('/mypage','MypageController@mypage');
 });
-
 
 //お店画面画面へ画面遷移
 Route::get('/shop/shop_info','IndexController@shopinfo');

@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Illuminate\Support\Facades\Log;
 use \Illuminate\Session\TokenMismatchException;
 class Handler extends ExceptionHandler
 {
@@ -51,6 +52,7 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
         if ($exception instanceof TokenMismatchException) {
+            Log::info($exception);
             return redirect('');
         }
 

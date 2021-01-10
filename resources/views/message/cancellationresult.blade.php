@@ -7,15 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ラーメン検索とラーメン空き情報を確認できる">
   <!-- CSS読込み -->
-  <link href="css/header.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
-  <link href="css/footer.css" rel="stylesheet">
+  <link href="../css/header.css" rel="stylesheet">
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="../css/footer.css" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <link href="css/ress.css" rel="stylesheet">
+  <link href="../css/ress.css" rel="stylesheet">
   <!-- ファビコン -->
   <link rel="icon" type="img/png" href="img/favicon/favicon.png">
   <!-- タイトル -->
-  <title>RamenUmashi</title>
+  <title>RamenUmashi|Cancel</title>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
       <div id="ramen-home" class="big-bg">
         <div class="page-header wrapper">
           <a class="logo-flex" href="{{ url('/') }}">
-            <img id="ramen-logo" src="img/logo/ramen-log.png" alt="">
+            <img id="ramen-logo" src="../img/logo/ramen-log.png" alt="">
           </a>
           <a class="logo-flex" href="{{ url('/') }}">
             <h1  id="logo-font">
@@ -101,41 +101,8 @@
     </header>
     <main>
       <main>
-        <h1 id="wrapper-main-cancellation">お客様解約</h1>
+        <h1 id="wrapper-main-cancellation">解約完了</h1>
         <div class="wrapper-cancellation">
-          <!--  グリッド-->
-          <form class="reig-center" action="{{action('CancelController@userCancel')}}" method="POST">
-            @csrf
-            <div class="main-cancellation-grid">
-              <div class="main-cancellation-item">
-                <label class="required">
-                  メールアドレス：
-                </label>
-                @error('email')
-                <div class="alert">{{ $message }}</div>
-                @enderror
-              </div>
-              <div class="main-cancellation-item">
-                <input type="text" name="email" value="">
-              </div>
-            </div>
-            <div class="main-cancellation-grid">
-              <div class="main-cancellation-item">
-                <label class="required">
-                  パスワード：
-                </label>
-                @error('password')
-                  <div class="alert">{{ $message }}</div>
-                @enderror
-              </div>
-              <div class="main-cancellation-item">
-                <input type="password" name="password" value="" >
-              </div>
-            </div>
-            <div class="cancellation-submit">
-              <input type="submit" name="submit" value="解約"  class="button">
-            </div>
-          </form>
         </div>
       </main>
     <footer>
