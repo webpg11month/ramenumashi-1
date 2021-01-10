@@ -15,10 +15,6 @@ use App\Http\Requests\ShopLoginRequest;
 
 class ShopLoginController extends Controller
 {
-    //
-    // public function shopLogin(){
-    //     return view('/message/resultshoplogin');
-    // }
     
     public function shopLogin(ShopLoginRequest $req){
         $data = $req->all();
