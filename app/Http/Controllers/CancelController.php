@@ -23,7 +23,8 @@ class CancelController extends Controller
         
         //ログアウト
         Auth::logout();
-   
+        
+        //画面遷移
         return view('/message/cancellationresult');
     }
 }
