@@ -36,3 +36,5 @@ select id from ramenumashi.shop_tb order by show_data desc, id desc limit 1 offs
 
 データ
 alter table shop_tb modify seat varchar(20) not null;
+
+test
