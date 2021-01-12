@@ -143,7 +143,7 @@
       <section id="location">
         <div class="wrapper">
           <div class="location-map">
-            <img class="fade-main" src="img/main/ramen-list.jpg" alt="ラーメン画像">
+            <img class="fade-main" src="{{asset('storage/image/'.$shop->img)}}" alt="ラーメン画像">
           </div>
           <div class="location-info">
               <table id="shop-table" border="5px">
