@@ -24,6 +24,9 @@ class ShopLogic extends Model
             $img = $img->store('public/image');
             $img = str_replace('public/image/', '', $img);
         }
+        if($img === null) {
+            $img = 'dumy1.png';
+        }
         if($img1 !== null){
             $img1 = $img1->store('public/image');
             $img1 = str_replace('public/image/', '', $img1);
