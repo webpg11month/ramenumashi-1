@@ -29,11 +29,10 @@ class SearchController extends Controller
         {
             //->orWhere('mail','like','%'.$keyword.'%')
             $query->where('shop_address','like','%'.$shop_address.'%');
+
             //->orWhere('shop_address','like','%'.$shop_address.'%');
         }
-
-        Log::info($shop_name);
-        Log::info($shop_address);
+        
         $shops = $query->orderBy('created_at', 'desc')->paginate(5);
         Log::info($shops);
 
