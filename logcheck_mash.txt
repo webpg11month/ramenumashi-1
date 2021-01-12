@@ -37,4 +37,12 @@ select id from ramenumashi.shop_tb order by show_data desc, id desc limit 1 offs
 データ
 alter table shop_tb modify seat varchar(20) not null;
 
-test
+gitコマンド
+echo "# testaaaa" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/webpg11month/testaaaa.git
+git push -u origin main
+                
