@@ -174,7 +174,7 @@
                 </tr>
               </table>
             <div class="main-reserve">
-              <form action="reserve.html" method="get">
+              <form action="{{action('ReserveController@reserve')}}" method="GET">
                 <input  class="button" id="rese" type="submit" value="予約">
               </form>
               <form action="index.html" method="GET">
