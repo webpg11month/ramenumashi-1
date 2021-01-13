@@ -22,7 +22,9 @@ class CreateUserTbTable extends Migration
             $table->enum('sex', ['1','2','3']);       
             $table->string('password',255);
             $table->enum('dlflag', ['1','2','3']);      
-            $table->timestamps();                        
+            $table->timestamps();
+
+            $table->primary('user_id');
             
         });
     }

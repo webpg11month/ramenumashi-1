@@ -15,7 +15,7 @@ class CreateShopTbTable extends Migration
     {
         Schema::create('shop_tb', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('shop_id',16)->unique();               
+            $table->string('shop_id',16);               
             $table->string('password',255);
             $table->string('shop_email',255)->unique();    
             $table->string('area_id',255);      
@@ -28,7 +28,9 @@ class CreateShopTbTable extends Migration
             $table->string('img',255)->nullable();
             $table->string('img1',255)->nullable();
             $table->string('img2',255)->nullable();
-            $table->timestamps();                       
+            $table->timestamps();        
+            
+            $table->primary('shop_id');
             
         });
     }
