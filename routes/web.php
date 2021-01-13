@@ -64,6 +64,10 @@ Route::group(["middleware"=> "guest"], function() {
     Route::get('/logout','LoginController@logout');
     Route::get('/mypage/index','MypageController@index');
     Route::get('/mypage','MypageController@mypage');
+    //予約処理
+    //お店結果予約
+    Route::get('/reserve','ReserveController@reserve');
+    Route::post('message/resultreserve','ReserveController@reserveResult');
 });
 
 //お店画面画面へ画面遷移
@@ -84,3 +88,6 @@ Route::group(["middleware"=> "shopLoginCheck"], function() {
 
 //お店検索結果
 Route::get('/shop','SearchController@search');
+
+
+
