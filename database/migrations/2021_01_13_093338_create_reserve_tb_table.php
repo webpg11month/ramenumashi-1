@@ -17,7 +17,7 @@ class CreateReserveTbTable extends Migration
             $table->string('reserve_id',16);               
             $table->string('user_id',255);
             $table->integer('number')->unique();    
-            $table->string('reserve_time',255);          
+            $table->string('reserve_time',255)->unique();          
             $table->enum('dlflag', ['1','2','3']);
             $table->timestamps();
 

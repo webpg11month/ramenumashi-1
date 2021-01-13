@@ -15,7 +15,7 @@ class CreateShopTbTable extends Migration
     {
         Schema::create('shop_tb', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('shop_id',16);               
+            $table->string('shop_id',16)->unique();               
             $table->string('password',255);
             $table->string('shop_email',255)->unique();    
             $table->string('area_id',255);      
