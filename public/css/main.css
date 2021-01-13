@@ -528,8 +528,9 @@ span.page-link {
 #main-reve-item{
   margin-left: 80%;
 }
-#main-reve-item1 select {
-  border-radius: 10px;
+#main-reve-item1 input{
+  border-radius: 0.5vw;
+  width: 5vw;
 }
 
 #main-reve-item2{
@@ -538,10 +539,17 @@ span.page-link {
 
 #main-reve-item3 input{
   margin: 0;
-  width: 100px;
+  width: 10vw;
   margin-right: 10px;
-  border-radius: 10px;
+  border-radius: 0.5vw;
 }
+
+#main-reve-item4 select{
+  width: 10vw;
+  text-align: center;
+  border-radius: 0.5vw;
+}
+
 .reve-submit{
   text-align: center;
   margin-bottom: 30px;
