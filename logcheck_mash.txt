@@ -4,7 +4,7 @@ php artisan migrate
 
 php artisan make:controller Shop/ShopController
 
-php artisan make:model Model/UserLogic
+php artisan make:model Table/UserLogic
 
 php artisan make:request UserLoginRequest
 
@@ -24,7 +24,7 @@ select img from shop_tb where show_data = (select show_data from shop_tb order b
 php artisan make:test UserTest
 
 ダミーデータ作成
-php artisan make:seeder ShopTableSeeder
+php artisan make:seeder ReserveTableSeeder
 
 準備
 composer dump-autoload
