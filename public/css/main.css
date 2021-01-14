@@ -539,7 +539,8 @@ span.page-link {
 
 #main-reve-item3 input{
   margin: 0;
-  width: 10vw;
+  width: 13
+  vw;
   margin-right: 10px;
   border-radius: 0.5vw;
 }
