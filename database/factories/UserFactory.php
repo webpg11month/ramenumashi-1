@@ -4,6 +4,7 @@
 
 use App\Table\User;
 use App\Table\Shop;
+use App\Table\Reserve;
 
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
@@ -37,5 +38,27 @@ $factory->define(Shop::class, function (Faker $faker) {
         'img2'=>'dumy'.mt_rand(1,3).'.png',
         'avarage_price' => mt_rand(1000,1500).'円～'.mt_rand(1501,2000).'円',
 
+    ];
+});
+
+$factory->define(Reserve::class, function (Faker $faker) {
+    $length = 2;
+    $max = pow(10, $length) - 1;// コードの最大値算出
+    $min = random_int(0, 60);// 乱数生成
+    $hour = random_int(8, 22);// 乱数生成
+    $day = random_int(1, 30);// 乱数生成
+    $month = random_int(1, 12);// 乱数生成
+    $min = sprintf('%0'. $length. 'd', $min);// 分
+    $hour = sprintf('%0'. $length. 'd', $hour);// 時
+    $day = sprintf('%0'. $length. 'd', $day);// 日
+    $month = sprintf('%0'. $length. 'd', $month);// 月
+    $date ="2021-".$month."-".$day.' '.$hour.':'.'00';
+
+    return [
+        'reserve_id' => Str::random(10),
+        'user_id'=>Str::random(10) ,
+        'number'=>mt_rand(1,150) ,
+        'reserve_time'=>$date ,
+        'dlflag'=>1 ,
     ];
 });
