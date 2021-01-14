@@ -23,6 +23,7 @@ class ReserveController extends Controller
         //Log::info($user_id);
         return view('/reserve',compact('user_id'));
     }
+
     public function reserveResult(Request $req){
         $data = $req->all();
         //ログイン中のユーザーID取得
@@ -36,22 +37,27 @@ class ReserveController extends Controller
         //欲しいデータyyyy/mm/dd/ hh:mm:ss
         Log::info($reserve_time);
         //お店情報と時間が両方一致した場合のSQL文
-        $userinfos = Reserve::where('reserve_time', $reserve_time)->exists();
-        //存在しない場合
-        if(!$userinfos){
+        //ユーザーIDとお店IDと予約時間の値があるレコードの存在可否
+        $reserveinfo = Reserve::where('reserve_time', $reserve_time)
+                    ->where('shop_id', $shop_id)
+                    ->where('user_id', $user_id)
+                    ->exists();
+        // Log::info($reserveinfo);
+        //存在しない場合処理が流れる
+        if(!$reserveinfo){
+            $reserve_infos = Reserve::create([
+                'shop_id' => $shop_id,
+                'user_id' => $user_id,
+                'number' => $req->number,
+                'reserve_time' => $reserve_time,
+                'dlflag'=> 1
+            ]);
+        }else {
+            Log::info('設定しなおして下さい');
+            return redirect()->back();
         }
         //上記内容のデータがあるかの判定 trueの場合は処理が完了する
-        // $reserve_infos = Reserve::create([
-        //     'reserve_id' => $user['user_id'],
-        //     'user_id' => $user,
-        //     'tel' => $user['tel'],
-        //     'age' => $user['age'],
-        //     'reserve_time' => $reserve_date,
-        //     'dlflag'=> 1
-        // ]);
         //多重予約対策　占有ロック　共有ロック
-
-
         return view('/message/resultreserve');
     }
 }

@@ -11,6 +11,7 @@ class Reserve extends Authenticatable
 
     protected $fillable = [
         'reserve_id',
+        'shop_id',
         'user_id',
         'number',
         'reserve_time',

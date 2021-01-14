@@ -55,7 +55,7 @@ $factory->define(Reserve::class, function (Faker $faker) {
     $date ="2021-".$month."-".$day.' '.$hour.':'.'00';
 
     return [
-        'reserve_id' => Str::random(10),
+        'shop_id' => Str::random(10),
         'user_id'=>Str::random(10) ,
         'number'=>mt_rand(1,150) ,
         'reserve_time'=>$date ,
