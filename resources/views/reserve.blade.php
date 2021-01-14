@@ -117,6 +117,7 @@
         <!--実際はポスト-->
         <form action="{{action('ReserveController@reserveResult')}}" method="post">
           @csrf
+          <input type="hidden" name="shop_id" value="{{$user_id}}">
           <div class="main-reve-grid">
             <div id="main-reve-item">
               人数：

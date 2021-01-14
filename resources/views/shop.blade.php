@@ -114,7 +114,7 @@
     <main class="main-width">
     </form>
     @foreach ($shops as $shop)
-      <input type="hidden" name="password[]" value={{ $shop->password }}>
+      {{-- <input type="hidden" name="password[]" value={{ $shop->password }}> --}}
       <ul class="gnav">
         <li id="shop-top">
           <a href="">店舗トップ</a>
@@ -175,6 +175,7 @@
               </table>
             <div class="main-reserve">
               <form action="{{action('ReserveController@reserve')}}" method="GET">
+                <input type="hidden" name="shop_id" value={{ $shop->shop_id }}>
                 <input  class="button" id="rese" type="submit" value="予約">
               </form>
               <form action="index.html" method="GET">
