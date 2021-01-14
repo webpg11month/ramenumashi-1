@@ -30,8 +30,6 @@ class CreateShopTbTable extends Migration
             $table->string('img2',255)->nullable();
             $table->timestamps();        
             
-            $table->primary('shop_id');
-            
         });
     }
 

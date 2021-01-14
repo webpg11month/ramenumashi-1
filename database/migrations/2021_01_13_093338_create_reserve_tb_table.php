@@ -14,14 +14,14 @@ class CreateReserveTbTable extends Migration
     public function up()
     {
         Schema::create('reserve_tb', function (Blueprint $table) {
-            $table->string('reserve_id',16);               
-            $table->string('user_id',255);
-            $table->integer('number')->unique();    
+
+            $table->bigIncrements('reserve_id');
+            $table->string('shop_id',16);
+            $table->string('user_id',16);
+            $table->integer('number');
             $table->string('reserve_time',255)->unique();          
             $table->enum('dlflag', ['1','2','3']);
             $table->timestamps();
-
-            $table->primary('reserve_id','user_id');
         });
     }
 
