@@ -98,119 +98,27 @@
         </div>
       </div>
   </header>
-  <h1 class="mypage-head">予約一覧</h1>
-    <!-- ユーザー名を取得し表示 -->
-    <p class="mypage-login">{{$user['user_id']}}様ログイン中</p>
-  <div class="wrapper grid">
-    <div class="item">
-      <p>うどん屋</p>
-      <a class="hover-index" href="shop.html"><img class="fade-main" src="img/main/ramen-list.jpg" alt="menu"></a>
-    </div>
-    <div class="item">
-      <p>うどん屋</p>
-      <a class="hover-index" href="shop.html"><img class="fade-main" src="img/main/ramen-list.jpg" alt="menu"></a>
-    </div>
-    <div class="item">
-      <p>うどん屋</p>
-      <a class="hover-index" href="shop.html"><img class="fade-main" src="img/main/ramen-list.jpg" alt="menu"></a>
-    </div>
-    <div class="item">
-      <p>うどん屋</p>
-      <a class="hover-index" href="shop.html"><img class="fade-main" src="img/main/ramen-list.jpg" alt="menu"></a>
-    </div>
-    <div class="item">
-      <p>うどん屋</p>
-      <a class="hover-index" href="shop.html"><img class="fade-main" src="img/main/ramen-list.jpg" alt="menu"></a>
-    </div>
-    <div class="item">
-      <p>うどん屋</p>
-      <a class="hover-index" href="shop.html"><img class="fade-main" src="img/main/ramen-list.jpg" alt="menu"></a>
-    </div>
-    <div class="item">
-      <p>うどん屋</p>
-      <a class="hover-index" href="shop.html"><img class="fade-main" src="img/main/ramen-list.jpg" alt="menu"></a>
-    </div>
-    <div class="item">
-      <p>うどん屋</p>
-      <a class="hover-index" href="shop.html"><img class="fade-main" src="img/main/ramen-list.jpg" alt="menu"></a>
-    </div>
-    <div class="item">
-      <p>うどん屋</p>
-      <a class="hover-index" href="shop.html"><img class="fade-main" src="img/main/ramen-list.jpg" alt="menu"></a>
-    </div>
-    <div class="item">
-      <p>うどん屋</p>
-      <a class="hover-index" href="shop.html"><img class="fade-main" src="img/main/ramen-list.jpg" alt="menu"></a>
-    </div>
-    <div class="item">
-      <p>うどん屋</p>
-      <a class="hover-index" href="shop.html"><img class="fade-main" src="img/main/ramen-list.jpg" alt="menu"></a>
-    </div>
-    <div class="item">
-      <p>うどん屋</p>
-      <a class="hover-index" href="shop.html"><img class="fade-main" src="img/main/ramen-list.jpg" alt="menu"></a>
-    </div>
-  </div><!-- /.grid -->
-  <div class="nav-links">
-    <a class="prev page-numbers" href="#">«</a><!-- 現在の前のページへのリンク -->
-    <a class="page-numbers" href="#">1</a><!-- 1ページ目へのリンク -->
-    <span class="page-numbers current">2</span><!-- 現在閲覧しているページ(2ページ) -->
-    <a class="page-numbers" href="#">3</a><!-- 3ページ目へのリンク -->
-    <span class="page-numbers dots">…</span><!-- ...の部分 -->
-    <a class="page-numbers" href="#">27</a><!-- 27ページ目(最後のページ)へのリンク -->
-    <a class="next page-numbers" href="#">»</a><!-- 現在の次のページへのリンク -->
-  </div>
+
   <main class="wrapper-mypage">
-      <h1 class="mypage-head">お気に入り一覧</h1>
+    <h1 class="mypage-head">予約一覧</h1>
+    <p class="mypage-login">{{$user['user_name']}}様ログイン中</p>
+    <div class="wrapper grid">
+      @foreach ($reserves as $reserve)
+      <div class="item">
+        <p>{{ $reserve->shop_name}}</p>
+          <a href="{{action('MypageController@edit')}}?reserve_id={{ $reserve->reserve_id}}">
+            <img class="fade-main" src="{{asset('storage/image/'.$reserve->img)}}" alt="menu">
+          </a>
+        {{$reserves->appends(request()->input())->render()}}
+      </div>
+      @endforeach
+    </div><!-- /.grid -->
+    <h1 class="mypage-head">お気に入り一覧</h1>
       <h1 class="mypage-head">マイページ</h1>
       <div class="wrapper grid">
         <div class="item">
           <p>うどん屋</p>
           <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="menu"></a>
-        </div>
-        <div class="item">
-          <p>うどん屋</p>
-          <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="menu"></a>
-        </div>
-        <div class="item">
-          <p>うどん屋</p>
-          <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="menu"></a>
-        </div>
-        <div class="item">
-          <p>うどん屋</p>
-          <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="menu"></a>
-        </div>
-        <div class="item">
-          <p>うどん屋</p>
-          <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="menu"></a>
-        </div>
-        <div class="item">
-          <p>うどん屋</p>
-          <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="menu"></a>
-        </div>
-        <div class="item">
-          <p>うどん屋</p>
-          <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="menu"></a>
-        </div>
-        <div class="item">
-          <p>うどん屋</p>
-          <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="menu"></a>
-        </div>
-        <div class="item">
-          <p>うどん屋</p>
-          <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="menu"></a>
-        </div>
-        <div class="item">
-          <p>うどん屋</p>
-          <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="menu"></a>
-        </div>
-        <div class="item">
-          <p>うどん屋</p>
-          <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="menu"></a>
-        </div>
-        <div class="hover-index item" >
-          <p>うどん屋</p>
-          <a href="shop.html"><img src="img/main/ramen-list.jpg" alt="menu"></a>
         </div>
       </div><!-- /.grid -->
       <div class="nav-links">
