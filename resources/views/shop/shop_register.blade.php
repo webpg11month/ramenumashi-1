@@ -131,6 +131,19 @@
           </div>
           <div class="shopregi-grid">
             <div class="shopregi-item-1">
+              <label class="required">
+                連絡先：
+              </label>
+            </div>
+            <div class="shopregi-item">
+              <input type="tel" id="shop_tel" name="shop_tel" value="{{ old('shop_tel') }}" enctype="multipart/form-data" >
+              @error('shop_tel')
+              <div class="alert">{{ $message }}</div>
+              @enderror
+            </div>
+          </div>
+          <div class="shopregi-grid">
+            <div class="shopregi-item-1">
               <label class="required1">
                 店名：
               </label>
