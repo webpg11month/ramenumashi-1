@@ -19,7 +19,7 @@ class CreateReserveTbTable extends Migration
             $table->string('shop_id',16);
             $table->string('user_id',16);
             $table->integer('number');
-            $table->string('reserve_time',255)->unique();          
+            $table->string('reserve_time',255);          
             $table->enum('dlflag', ['1','2','3']);
             $table->timestamps();
         });
