@@ -42,7 +42,7 @@ class ReserveController extends Controller
                     ->where('shop_id', $shop_id)
                     ->where('user_id', $user_id)
                     ->exists();
-        // Log::info($reserveinfo);
+        Log::info($reserveinfo);
         //存在しない場合処理が流れる
         if(!$reserveinfo){
             $reserve_infos = Reserve::create([
@@ -52,6 +52,9 @@ class ReserveController extends Controller
                 'reserve_time' => $reserve_time,
                 'dlflag'=> 1
             ]);
+        }else if($reserveinfo === null || $reserveinfo === ""){
+            Log::info('その他エラー');
+            return redirect()->back();
         }else {
             Log::info('設定しなおして下さい');
             return redirect()->back();
