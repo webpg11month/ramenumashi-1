@@ -26,6 +26,7 @@ class UserLogic extends Model
 
         $user_infos = User::create([
           'user_id' => $user['user_id'],
+          'user_name' => $user['user_name'],
           'email' => $user['email'],
           'tel' => $user['tel'],
           'age' => $user['age'],
