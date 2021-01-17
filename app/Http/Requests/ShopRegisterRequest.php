@@ -59,6 +59,23 @@ class ShopRegisterRequest extends FormRequest
         return $vali;
 
     }
+    
+    /**
+     * 項目名
+     *
+     * @return array
+     */
+    public function attributes()
+    {
+        return [
+            'shop_id' => 'お店ID',
+            'password' => 'パスワード',
+            'shop_email' => 'E-mail',
+            'shop_name' => '店名',
+            'shop_address' => '住所',
+            'shop_seat' => '座席数',
+        ];
+    }
 
     /**
      * 定義済みバリデーションルールのエラーメッセージ取得
