@@ -31,13 +31,13 @@ class UserRegisterRequest extends FormRequest
 
         $vali = [
             'user_id' => 'required|max:16|unique:user_tb,user_id',
+            'user_name' => 'required',
             'password' => [
                 'required',
                 'between:8,32',  
                 'regex:/^.*((?=.*[A-Za-z])(?=.*[0-9])|(?=.*[A-Za-z])(?=.*[!_@])|(?=.*[0-9])(?=.*[!_@])).*$/',
                 'max:16', //email unique
             ],
-            'sex' => 'required',
             'email' => [
                 'required',
                 'regex:/^[a-zA-Z0-9_+-]+(.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/',
@@ -50,6 +50,21 @@ class UserRegisterRequest extends FormRequest
 
         return $vali;
 
+    }
+    /**
+     * 項目名
+     *
+     * @return array
+     */
+    public function attributes()
+    {
+        return [
+            'user_id' => 'ユーザーID',
+            'user_name' => 'ユーザー名',
+            'password' => 'パスワード',
+            'sex' => 'E-mail',
+            'email' => 'E-mail',
+        ];
     }
 
     /**
