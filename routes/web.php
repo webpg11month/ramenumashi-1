@@ -62,7 +62,7 @@ Route::group(["middleware"=> "loginCheck"], function() {
 //ログイン中
 Route::group(["middleware"=> "guest"], function() {
     Route::get('/logout','LoginController@logout');
-    Route::get('/mypage/index','MypageController@index');
+    Route::get('/mypage/detail','MypageController@edit');
     Route::get('/mypage','MypageController@mypage');
     //予約処理
     //お店結果予約
