@@ -15,11 +15,12 @@ class CreateShopTbTable extends Migration
     {
         Schema::create('shop_tb', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('shop_id',16)->unique();               
+            $table->string('shop_id',16)->unique(); 
+            $table->string('shop_name',255);
+            $table->string('shop_tel',20)->nullable();                          
             $table->string('password',255);
             $table->string('shop_email',255)->unique();    
             $table->string('area_id',255);      
-            $table->string('shop_name',255);          
             $table->string('shop_address',255);       
             $table->bigInteger('seat');             
             $table->bigInteger('show_data');    
