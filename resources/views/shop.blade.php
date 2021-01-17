@@ -114,35 +114,10 @@
     <main class="main-width">
     </form>
     @foreach ($shops as $shop)
-      {{-- <input type="hidden" name="password[]" value={{ $shop->password }}> --}}
-      <ul class="gnav">
-        <li id="shop-top">
-          <a href="">店舗トップ</a>
-        </li>
-        <li id="shop-menu"><a href="">メニュー▼</a>
-          <ul>
-            <li><a href="">ラーメン</a></li>
-            <li><a href="">ドリンク</a></li>
-            <li><a href="">ご飯もの</a></li>
-            <li><a href="">サイドメニュー</a></li>
-          </ul>
-        </li>
-        <li id="sheet-top"><a href="">座席▼</a>
-          <ul>
-            <li><a href="">カウンター</a></li>
-            <li><a href="">テーブル</a></li>
-          </ul>
-        </li>
-        <li id="kodawari-top">
-          <a href="">こだわり</a>
-        </li>
-        <li id="kutikomi-top">
-          <a href="">口コミ</a>
-        </li>
-      </ul>
       <section id="location">
         <div class="wrapper">
           <div class="location-map">
+            <h2>店舗画像</h2>
             <img class="fade-main" src="{{asset('storage/image/'.$shop->img)}}" alt="ラーメン画像">
           </div>
           <div class="location-info">
@@ -160,27 +135,12 @@
                   <td class="shop-table-td">平均価格</td>
                   <td class="shop-table-td">{{ $shop->avarage_price }}</td>
                 </tr>
-                <tr>
-                  <td class="shop-table-td">予約時刻</td>
-                  <td class="shop-table-td">2020-12-12-14:11</td>
-                </tr>
-                <tr>
-                  <td class="shop-table-td">予約状況</td>
-                  <td class="shop-table-td">〇（予約してます）</td>
-                </tr>
-                <tr>
-                  <td class="shop-table-td">予約日時</td>
-                  <td class="shop-table-td">2020/12/22 12:00</td>
-                </tr>
               </table>
             <div class="main-reserve">
               <form action="{{action('ReserveController@reserve')}}" method="GET">
                 <input type="hidden" name="shop_id" value={{ $shop->shop_id }}>
                 <input  class="button" id="rese" type="submit" value="予約">
               </form>
-              <form action="index.html" method="GET">
-                <input  class="button" id="cancel" type="submit" value="キャンセル">
-              </form>  
             </div>
           </div>
         </div>
@@ -216,10 +176,6 @@
         <hr style="width: 1200px; margin: 0 auto;">
         @endforeach
         <div class="pager-links">
-          {{-- {{ $shops->appends(Request::only('keyword'))->links() }} --}}
-          {{-- {{$shops->appends(request()->input())->render()}} --}}
-          {{-- {!!$shops->appends(['keyword','keyword1'])->render()!!} --}}
-          {{-- {!!$shops->appends(['shop_name'=>$shop_name,'shop_address'=>$shop_address])->render()!!}} --}}
           {{$shops->appends(request()->input())->render()}}
 
         </div>
