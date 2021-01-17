@@ -106,8 +106,22 @@
               <p class="alert">※16文字以内で記入して下さい。</p>
             </div>
             <div class="main-regi-item">
-              <input type="text" name="user_id" value="{{ old('user_id') }}" required>
+              <input type="text" name="user_id" value="{{ old('user_id') }}">
               @error('user_id')
+              <div class="alert">{{ $message }}</div>
+              @enderror
+            </div>
+          </div>
+          <div class="main-regi-grid">
+            <div class="main-regi-item">
+              <label class="required">
+                ユーザー名：
+              </label>
+              <p class="alert">※16文字以内で記入して下さい。</p>
+            </div>
+            <div class="main-regi-item">
+              <input type="text" name="user_name" value="{{ old('user_name') }}" >
+              @error('user_name')
               <div class="alert">{{ $message }}</div>
               @enderror
             </div>
@@ -120,7 +134,7 @@
               <p class="alert">※8文字から32文字以内で(@_!)いずれか2種類以上を入力して下さい。</p>
             </div>
             <div class="main-regi-item">
-              <input type="password" id="password" name="password" value="{{ old('password') }}" required>
+              <input type="password" id="password" name="password" value="{{ old('password') }}" >
               @error('password')
               <div class="alert">{{ $message }}</div>
               @enderror
@@ -133,7 +147,7 @@
               </label>
             </div>
             <div class="main-regi-item">
-              <input type="password" id="confirm_password" name="confirm_password" required>
+              <input type="password" id="confirm_password" name="confirm_password" >
               <p class="alert" id="error_msg"></p>
             </div>
           </div>
