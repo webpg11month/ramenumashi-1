@@ -46,4 +46,47 @@ git branch -M main
 git remote add origin https://github.com/webpg11month/testaaaa.git
 git push -u origin main
 
-test
+
+git bash.exeにて実行する
+vagrant up
+vagrant up --provision
+※これで実行した方がよい
+vagrant.exe ssh
+cd code
+sqlcomd : mysql -uhomestead -psecret homestead
+
+mash.laravel 
+
+composer create-project --prefer-dist laravel/laravel Online "6.*"
+--ステータス確認--
+vagrant status
+--停止--
+vagrant halt
+
+mash.laravel 
+
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+
+
+
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+
+There was an error while executing `VBoxManage`, a CLI used by Vagrant
+for controlling VirtualBox. The command and stderr is shown below.
+
+Command: ["startvm", "e4e7ae6a-e47d-4d88-8be5-bb1c4f7e30f8", "--type", "headless"]
+
+Stderr: VBoxManage.exe: error: Failed to open/create the internal network 'HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adapter #2' (VERR_INTNET_FLT_IF_NOT_FOUND).
+VBoxManage.exe: error: Failed to attach the network LUN (VERR_INTNET_FLT_IF_NOT_FOUND)
+VBoxManage.exe: error: Details: code E_FAIL (0x80004005), component ConsoleWrap, interface IConsole
