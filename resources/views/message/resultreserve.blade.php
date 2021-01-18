@@ -107,6 +107,7 @@
     </header>
     <main>
       <h1 id="wrapper-main-regi">ご予約ありがとうございます！！</h1>
+      <a class="register-result" href="{{ url('/shop') }}">もう一度予約</a>へ
     </main>
     <footer>
       <nav class="footer-nav-list">
