@@ -48,6 +48,7 @@ return array(
     'App\\Providers\\DataBaseQueryServiceProvider' => $baseDir . '/app/Providers/DataBaseQueryServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+    'App\\Table\\Okini' => $baseDir . '/app/Table/Okini.php',
     'App\\Table\\Reserve' => $baseDir . '/app/Table/Reserve.php',
     'App\\Table\\Shop' => $baseDir . '/app/Table/Shop.php',
     'App\\Table\\User' => $baseDir . '/app/Table/User.php',
