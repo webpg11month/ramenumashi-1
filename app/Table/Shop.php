@@ -19,6 +19,7 @@ class Shop extends Authenticatable
         'seat',
         'show_data',
         'dlflag',
+        'avarage_price',
         'img',
         'img1',
         'img2'

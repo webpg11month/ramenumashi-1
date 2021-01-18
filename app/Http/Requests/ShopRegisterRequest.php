@@ -32,6 +32,7 @@ class ShopRegisterRequest extends FormRequest
 
         $vali = [
             'shop_id' => 'required|max:16|unique:shop_tb,shop_id',
+            'avarage_price' => 'required',
             'password' => [
                 'required',
                 'between:8,32',  
@@ -69,6 +70,7 @@ class ShopRegisterRequest extends FormRequest
     {
         return [
             'shop_id' => 'お店ID',
+            'avarage_price' => '価格',
             'password' => 'パスワード',
             'shop_email' => 'E-mail',
             'shop_name' => '店名',

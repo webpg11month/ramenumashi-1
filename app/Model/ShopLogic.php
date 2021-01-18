@@ -40,6 +40,7 @@ class ShopLogic extends Model
         $shoppass = Hash::make($shop['password']);
         Log::info($shopinfos);
         Log::info($shoppass);
+        Log::info($shop['avarage_price']);
         
         $shop_infos = Shop::create([
             'shop_id' => $shop['shop_id'],
@@ -51,6 +52,7 @@ class ShopLogic extends Model
             'seat' => 1,
             'show_data' => 0,
             'dlflag' => 1,
+            'avarage_price' => $shop['avarage_price'],
             'img'=> $img,
             'img1'=> $img1,
             'img2'=> $img2

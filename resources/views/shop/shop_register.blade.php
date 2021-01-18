@@ -183,6 +183,19 @@
           </div>
           <div class="shopregi-grid">
             <div class="shopregi-item-1">
+             <label class="required">
+                価格：
+              </label>
+            </div>
+            <div class="shopregi-item">
+              <input type="text" name="avarage_price" value="{{ old('avarage_price') }}" >
+              @error('avarage_price')
+              <div class="alert">{{ $message }}</div>
+              @enderror
+            </div>
+          </div>
+          <div class="shopregi-grid">
+            <div class="shopregi-item-1">
               <label class="optional">
                 店舗画像：
               </label>
