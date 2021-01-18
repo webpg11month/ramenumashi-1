@@ -471,6 +471,7 @@ class ComposerStaticInit741e3555229bbde6c04f4c316089cdd8
         'App\\Providers\\DataBaseQueryServiceProvider' => __DIR__ . '/../..' . '/app/Providers/DataBaseQueryServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Table\\Okini' => __DIR__ . '/../..' . '/app/Table/Okini.php',
         'App\\Table\\Reserve' => __DIR__ . '/../..' . '/app/Table/Reserve.php',
         'App\\Table\\Shop' => __DIR__ . '/../..' . '/app/Table/Shop.php',
         'App\\Table\\User' => __DIR__ . '/../..' . '/app/Table/User.php',
