@@ -61,13 +61,23 @@ Route::group(["middleware"=> "loginCheck"], function() {
 
 //ログイン中
 Route::group(["middleware"=> "guest"], function() {
+    //ログアウト処理
     Route::get('/logout','LoginController@logout');
-    Route::get('/mypage/detail','MypageController@edit');
+    //予約キャンセル
+    Route::get('/message/resultcancel','MypageController@delete');
+    //予約お店詳細
+    Route::get('/mypage/detail','MypageController@detail');
+    //お店予約
     Route::get('/mypage','MypageController@mypage');
-    //予約処理
-    //お店結果予約
     Route::get('/reserve','ReserveController@reserve');
     Route::post('message/resultreserve','ReserveController@reserveResult');
+    
+    //お気に入り登録
+    Route::get('/message/resultokini','MypageController@okini');
+    //お気に入り詳細
+    Route::get('/mypage/okinidetail','MypageController@okiniDetail');
+    //お気に入り解除
+    Route::get('/message/resultokinicancel','MypageController@okiDelete');
 });
 
 //お店画面画面へ画面遷移
