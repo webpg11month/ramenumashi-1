@@ -98,8 +98,9 @@
   </header>
     <main class="wrapper-mypage">
       <h1 class="mypage-head">お店情報</h1>
-      <form class="reig-center" action="{{action('RegisterController@userRegister')}}" method="POST">
+      <form class="reig-center" action="{{action('MypageController@delete')}}" method="get">
         @csrf
+        <input type="hidden" name="reserve_id" value="{{$reserves->reserve_id}}">
         <div class="main-regi-grid">
           <div class="main-regi-item">
             <label>
@@ -151,7 +152,7 @@
           </div>
         </div>
         <div class="regi-submit">
-          <input type="submit" name="submit" value="新規登録" class="button">
+          <input type="submit" name="submit" value="キャンセル" class="button">
         </div>
       </form>
     </div>
