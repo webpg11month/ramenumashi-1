@@ -127,6 +127,12 @@ LOGINとREGISTERとRAMENUMASHIについての設定
   transition: all  0.5s ease; 
 }
 
+.header-link1-1 {
+  background-color: #fafafa;
+  padding: 10px;
+  opacity: 0.8;
+  border-radius: 15px;
+}
 /*--------------------------
 検索窓の設定
 */
