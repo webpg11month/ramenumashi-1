@@ -1,4 +1,5 @@
 @extends('layout.common')
+@section('title', 'マイページ')
 <body>
   <div class="wrapper-header">
     <header>

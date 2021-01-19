@@ -1,5 +1,5 @@
 @extends('layout.common')
-
+@section('title', 'お店一覧')
 <body>
   <div class="wrapper-header">
     <header>

@@ -1,4 +1,5 @@
 @extends('layout.common')
+@section('title', 'ログイン')
 <body>
   <div class="wrapper-header">
       <header>
@@ -116,5 +117,3 @@
       </div>
     </main>
     @include('layout.footer')
-    <div id="page_top"><a href="#"></a></div>
-  </div>

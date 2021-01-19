@@ -1,5 +1,5 @@
 @extends('layout.common-1')
-
+@section('title', 'お店ログイン')
 <body>
   <div class="wrapper-header">
       <header>

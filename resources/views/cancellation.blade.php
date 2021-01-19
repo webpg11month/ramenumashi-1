@@ -1,4 +1,5 @@
 @extends('layout.common')
+@section('title', '解約')
 <body>
   <!-- ラッピングにて -->
   <div class="wrapper-header">

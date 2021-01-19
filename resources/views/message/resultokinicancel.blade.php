@@ -1,4 +1,5 @@
 @extends('layout.common-1')
+@section('title', 'お気に入りキャンセル')
 <body>
   <div class="wrapper-header">
     <header>

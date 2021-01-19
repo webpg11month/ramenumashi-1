@@ -1,4 +1,5 @@
 @extends('layout.common-1')
+@section('title', '解約')
 
 <body>
   <!-- ラッピングにて -->

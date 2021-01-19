@@ -1,5 +1,5 @@
 @extends('layout.common-1')
-
+@section('title', '予約キャンセル')
 <body>
   <div class="wrapper-header">
     <header>

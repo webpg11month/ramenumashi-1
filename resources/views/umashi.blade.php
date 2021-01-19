@@ -1,4 +1,5 @@
 @extends('layout.common')
+@section('title', 'うましについて')
 <body class="fade-main">
   <div class="wrapper-header">
     <header>

@@ -1,4 +1,5 @@
 @extends('layout.common')
+@section('title', 'お問合せ')
 <body>
   <div class="wrapper-header">
     <header>

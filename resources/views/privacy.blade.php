@@ -1,4 +1,5 @@
 @extends('layout.common')
+@section('title', 'プライバシー')
 <body class="fade-main">
   <!-- ラッピングにて -->
   <div class="wrapper-header">

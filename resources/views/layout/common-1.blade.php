@@ -14,7 +14,7 @@
     <!-- ファビコン -->
     <link rel="icon" type="img/png" href="img/favicon/favicon.png">
     <!-- タイトル -->
-    <title>RamenUmashi</title>
+    <title>RamenUmashi | @yield('title')</title>
   </head>
 </head>
 <body>

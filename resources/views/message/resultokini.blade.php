@@ -1,5 +1,6 @@
 
 @extends('layout.common-1')
+@section('title', 'お気に入り')
 <body>
   <div class="wrapper-header">
     <header>
