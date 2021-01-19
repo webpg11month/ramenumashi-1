@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-  <!-- 初期設定 -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ラーメン検索とラーメン空き情報を確認できる">
-  <!-- CSS読込み -->
-  <link href="css/header.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
-  <link href="css/footer.css" rel="stylesheet">
-  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <link href="css/ress.css" rel="stylesheet">
-  <!-- ファビコン -->
-  <link rel="icon" type="img/png" href="img/favicon/favicon.png">
-  <!-- タイトル -->
-  <title>RamenUmashi</title>
-</head>
+@extends('layout.common')
 
 <body class="fade-main">
   <!-- ラッピングにて -->
@@ -98,182 +80,29 @@
           </nav>
         </div>
       </div>
-      <div class="home-content-scroll">
-        <div class="header-scroll">
-          <div class="header-news">
-            <div class="anxiy-news1">アップデート情報 → </div>
-            <div class="anxiy-news2">2020/12/2：<a href="https://www3.nhk.or.jp/news/special/coronavirus/data/">コロナ最新情報</a></div>
-          </div>
-        </div>
-      </div>
-      <div class="home-content">
-        <form action="shop.html" method="get">
-          <div class="ramen-search-nav">
-            <div class="anxiy-item">
-              <input class="ramen-search-size" type="search" name="shop" placeholder="お店名でさがす" value="">
-            </div>
-            <div class="anxiy-item">
-              <input class="ramen-search-size" type="search" name="area" placeholder="地域" value="">
-            </div>
-            <div class="anxiy-item">
-              <input class="ramen-search-size-date" type="date" name="" value="2020-12-22">
-            </div>
-            <div class="anxiy-item">
-              <input id="ramen-search-submit" type="submit" value="検索">
-            </div>
-          </div>
-        </form>
-      </div>
+   </header>
+    <main class="wrapper-privacy3">
+      <h1 class="mainTitle">第三者企業へのお客様情報の送信について</h1>
+      <p>
+          当社は、当社が提供するウェブサイト内において、広告主または広告配信会社等による広告配信およびその効果測定等の目的や、調査・分析会社等による当社サイトの利用状況の調査等を目的として、それらの第三者企業が提供するサービスを導入している場合があります。それにより、カスタマーの端末から、それらの第三者企業独自のクッキーやWebビーコン等を介して情報が送信される場合があります。　なお、送信される情報にはカスタマー個人を特定する情報は含まれておりません。
+      </p>
+      <br>
+      <br>
 
-      <div class="home-content-1">
-        <form action="shop.html" method="get">
-          <table class="search-table-response">
-            <th>
-              検索
-            </th>
-            <tr>
-              <td>
-                <input type="search" name="shop" value="" placeholder="お店名でさがす">
-              </td>
-            </tr>
-            <th>
-              地域検索
-            </th>
-            <tr>
-              <td>
-                <input type="search" name="area" value="" placeholder="地域">
-              </td>
-            </tr>
-            <th>
-              日付検索
-            </th>
-            <tr>
-              <td>
-                <input class="date-search-response" type="date" name="date-search" value="2020-12-22" placeholder="日付">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="submit-color">
-                  <input class="submit-table-response" type="submit" value="検索">
-                </div>
-              </td>
-            </tr>
-          </table>
-        </form>
-      </div>
-          <h1 style="color: aliceblue;background-color: black;text-align: center;">注意事項</h1>
-          <h3 style="color: aliceblue;background-color: black;text-align: center;">※必ず店名と地域名を入力してください。最大1000件まで表示可能です。地域の書き方は「XX県XX市」でお願いします。</h3>
-    </header>
-    <main>
-      <h1 id="wrapper-main-login">おすすめラーメン</h1>
-      <div class="slider">
-        <div  class="slider-content">
-         <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="ラーメン１"></a>
-        </div>
-        <div class="slider-content">
-         <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="ラーメン２"></a>
-        </div>
-        <div class="slider-content">
-         <a class="hover-index" href="shop.html"><img src="img/main/ramen-list.jpg" alt="ラーメン３"></a>
-        </div>
-      </div>
-      <div class="main-header wrapper">
-        <h1 class="main-access">
-          アクセス数ランキング
-        </h1>
-        <!--  グリッド-->
-        <div class="main-access-rank">
-          <div class="main-access-rank">
-            <div id="main-access-item1">
-                <h1 class="main-rank-item">1位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img src="img/main/ramen-list.jpg" alt="ラーメン"></a>
-              <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest</p>
-            </div>
-            <div id="main-access-item2">
-                <h1 class="main-rank-item">2位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img src="img/main/ramen-list.jpg" alt="ラーメン"></a>
-              <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest</p>
-            </div>
-            <div id="main-access-item3">
-              <h1 class="main-rank-item">3位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img src="img/main/ramen-list.jpg" alt="ラーメン"></a>
-              <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
-              </p>
-            </div>
-          </div>
-        </div>
-          <h1 class="main-access">
-            お気に入り登録ランキング
-          </h1>
-          <div class="main-access-rank">
-            <div id="main-access-item4">
-                <h1 class="main-rank-item">1位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img class="fade-main" src="img/main/ramen-list.jpg" alt="ラーメン"></a>
-              <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
-              </p>
-            </div>
-            <div id="main-access-item5">
-                <h1 class="main-rank-item">2位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img class="fade-main" src="img/main/ramen-list.jpg" alt="ラーメン"></a>
-              <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
-              </p>
-            </div>
-            <div id="main-access-item6">
-                <h1 class="main-rank-item">3位</h1>
-              <a class="hover-index" href="{{ url('/shop') }}"><img class="fade-main" src="img/main/ramen-list.jpg" alt="ラーメン"></a>
-              <p class="main-rank-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
-              </p>
-            </div>
-          </div>
-        </div>
+      <h2 class="ttl">当社が導入しているサービスおよび第三者企業に送信される情報は以下のとおりです</h2>
+      <h3 class="ttl">Google広告/グーグル株式会社</h3>
+      <p>
+          送信情報 : お客様のサービス閲覧履歴（閲覧日時・URL）等<br>
+          送信目的 : 最適な広告配信のため<br>
+          送信先 : Google, Inc.<br>
+          オプトアウト : <a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank">https://policies.google.com/technologies/ads?hl=ja</a><br>
+      </p>
+      <h3 class="ttl">GoogleAnalytics/グーグル株式会社</h3>
+      <p>
+          送信情報 : お客様のサービス閲覧履歴（閲覧日時・URL）等<br>
+          送信目的 : サービスの利用状況解析のため<br>
+          送信先 : Google, Inc.<br>
+          オプトアウト : <a href="https://support.google.com/analytics/answer/181881?hl=ja" target="_blank">https://support.google.com/analytics/answer/181881?hl=ja</a><br>
+      </p>
     </main>
-    <footer>
-      <nav class="footer-nav-list">
-        <ul class="footer-nav">
-          <li>
-            <a class="footer-link1-1" href="{{ url('/contact') }}">
-              お問い合わせ
-            </a>
-          </li>
-          <li>
-            <a class="footer-link1-1" href="{{ url('/role') }}">サービス利用規約</a>
-          </li>
-          <li>
-            <a class="footer-link1-1" href="{{ url('/privacy') }}">個人情報保護方針</a>
-          </li>
-          <li>
-            <a class="footer-link1-1" href="{{ url('/help') }}">ヘルプ</a>
-          </li>
-          <li>
-            <a class="footer-link1-1" href="{{ url('/cancellation') }}">解約</a>
-          </li>
-        </ul>
-      </nav>
-      <nav class="footer-nav-list-1">
-        <ul class="footer-nav-1">
-          <li>
-            <a class="footer-link2-1" href="https://twitter.com">
-              <i class="fab fa-twitter-square fa-6x"></i>
-            </a>
-            <p>Twitter</p>
-          </li>
-          <li>
-            <a class="footer-link1-1" href="https://www.instagram.com/?hl=ja"><i class="fab fa-instagram fa-6x"></i></a>
-            <p>instagram</p>
-          </li>
-          <li>
-            <a class="footer-link1-1" href="https://ja-jp.facebook.com"><i class="fab fa-facebook-f fa-6x"></i></a>
-            <p>FaceBook</p>
-          </li>
-        </ul>
-      </nav>
-      <h1 class="footer-umashi">RamenUmashi</h1>
-      <small class="footer-umashi-1">© 2020 RamenCP UmashiGP Inc.
-      </small>
-    </footer>
-    <div id="page_top"><a href="#"></a></div>
-  </div>
-</body>
-
-</html>
+    @include('layout.footer')

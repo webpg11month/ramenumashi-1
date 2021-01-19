@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-  <!-- 初期設定 -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ラーメン検索とラーメン空き情報を確認できる">
-  <!-- CSS読込み -->
-  <link href="css/header.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
-  <link href="css/footer.css" rel="stylesheet">
-  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <link href="css/ress.css" rel="stylesheet">
-  <!-- ファビコン -->
-  <link rel="icon" type="img/png" href="img/favicon/favicon.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-  <!-- タイトル -->
-  <title>RamenUmashi</title>
-</head>
-
+@extends('layout.common')
 <body class="fade-main">
   <!-- ラッピングにて -->
   <div class="wrapper-header">
@@ -113,14 +91,6 @@
           </nav>
         </div>
       </div>
-      <div class="home-content-scroll">
-        <div class="header-scroll">
-          <div class="header-news">
-            <div class="anxiy-news1">アップデート情報 → </div>
-            <div class="anxiy-news2">2020/12/2：<a href="https://www3.nhk.or.jp/news/special/coronavirus/data/">コロナ最新情報</a></div>
-          </div>
-        </div>
-      </div>
       <div class="home-content">
         <form action="{{action('SearchController@search')}}" method="get">
           <div class="ramen-search-nav">
@@ -139,7 +109,6 @@
           </div>
         </form>
       </div>
-
       <div class="home-content-1">
         <form action="{{action('SearchController@search')}}" method="get">
 
@@ -244,55 +213,8 @@
           </div>
         </div>
     </main>
-    <footer>
-      <nav class="footer-nav-list">
-        <ul class="footer-nav">
-          <li>
-            <a class="footer-link1-1" href="{{ url('/contact') }}">
-              お問い合わせ
-            </a>
-          </li>
-          <li>
-            <a class="footer-link1-1" href="{{ url('/role') }}">サービス利用規約</a>
-          </li>
-          <li>
-            <a class="footer-link1-1" href="{{ url('/privacy') }}">個人情報保護方針</a>
-          </li>
-          <li>
-            <a class="footer-link1-1" href="{{ url('/privacy3') }}">個人情報だの第三者提供方針</a>
-          </li>
-          <li>
-            <a class="footer-link1-1" href="{{ url('/help') }}">ヘルプ</a>
-          </li>
-          <li>
-            <a class="footer-link1-1" href="{{ url('/cancellation') }}">解約</a>
-          </li>
-        </ul>
-      </nav>
-      <nav class="footer-nav-list-1">
-        <ul class="footer-nav-1">
-          <li>
-            <a class="footer-link2-1" href="https://twitter.com">
-              <i class="fab fa-twitter-square fa-6x"></i>
-            </a>
-            <p>Twitter</p>
-          </li>
-          <li>
-            <a class="footer-link1-1" href="https://www.instagram.com/?hl=ja"><i class="fab fa-instagram fa-6x"></i></a>
-            <p>instagram</p>
-          </li>
-          <li>
-            <a class="footer-link1-1" href="https://ja-jp.facebook.com"><i class="fab fa-facebook-f fa-6x"></i></a>
-            <p>FaceBook</p>
-          </li>
-        </ul>
-      </nav>
-      <h1 class="footer-umashi">RamenUmashi</h1>
-      <small class="footer-umashi-1">© 2020 RamenCP UmashiGP Inc.
-      </small>
-    </footer>
+    @include('layout.footer')
     <div id="page_top"><a href="#"></a></div>
   </div>
 </body>
-
 </html>

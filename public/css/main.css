@@ -477,6 +477,7 @@ span.page-link {
   #umashi-item4 img{
     width: 200px;
     height: 300px;
+
   }
   #umashi-item5{
     width: 400px;
@@ -494,9 +495,11 @@ span.page-link {
   .umashi-text{
     margin-left: 40px;
     margin-top: 60px;
+    margin-bottom: 200px;
   }
   .umashi-flex {
     margin-top: 0px;
+    margin-bottom: 100px;
     display: flex;
   }
 
