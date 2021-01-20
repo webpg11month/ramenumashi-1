@@ -1,5 +1,5 @@
 <h1>RamenUmashi</h1>
-<p align="center"><img src="img/main/ramen-list.jpg"></p>
+<img src="img/main/ramen-list.jpg">
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
