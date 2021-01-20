@@ -37,6 +37,9 @@
                 </li>
               @endauth
               <li>
+                <a class="header-link1-1" href="{{ url('/') }}">ラーメン検索</a>
+              </li>
+              <li>
                 <a class="header-link1-1" href="{{ url('/shop/shop_info') }}">ラーメン店主様ご利用の場合</a>
               </li>
             </ul>
