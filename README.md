@@ -1,6 +1,6 @@
 <h1>RamenUmashi</h1>
-<img src="img/etc/env.jpg">
-![Test Image 3](img/etc/env.jpg)
+<p align="center">![env](https://user-images.githubusercontent.com/65721613/105109042-0612fc80-5aff-11eb-8989-3c1c342377d8.png)</p>
+
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
