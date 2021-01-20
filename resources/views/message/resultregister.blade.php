@@ -52,9 +52,11 @@
                   <li class="hamburger-item">
                     <a href="{{ url('/help') }}">ヘルプ</a>
                   </li><!-- /.hamburger-item -->
+                  @guest
                   <li class="hamburger-item">
                     <a href="{{ url('/login') }}">ログイン</a>
                   </li><!-- /.hamburger-item -->
+                  @endguest
                   <li class="hamburger-item">
                     <a href="{{ url('/umashi') }}">RamenUmashiとは</a>
                   </li><!-- /.hamburger-item -->

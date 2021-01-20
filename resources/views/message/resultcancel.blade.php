@@ -64,9 +64,14 @@
                   <li class="hamburger-item">
                     <a href="{{ url('/help') }}">ヘルプ</a>
                   </li><!-- /.hamburger-item -->
+                  @auth
                   <li class="hamburger-item">
-                    <a href="{{ url('/login') }}">ログイン</a>
+                    <a href="{{ url('/logout') }}">ログアウト</a>
                   </li><!-- /.hamburger-item -->
+                  <li class="hamburger-item">
+                    <a href="{{ url('/mypage') }}">マイページ</a>
+                  </li><!-- /.hamburger-item -->                      
+                  @endauth
                   <li class="hamburger-item">
                     <a href="{{ url('/umashi') }}">RamenUmashiとは</a>
                   </li><!-- /.hamburger-item -->

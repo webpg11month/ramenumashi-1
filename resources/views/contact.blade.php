@@ -10,7 +10,7 @@
           <a class="logo-flex" href="{{ url('/') }}">
             <img class="fade-main" id="ramen-logo" src="img/logo/ramen-log.png" alt="">
           </a>
-          <a class="logo-flex" href="{{ url('/index') }}">
+          <a class="logo-flex" href="{{ url('/') }}">
             <h1  id="logo-font">
               RamenUmashi
             </h1>
@@ -52,12 +52,22 @@
                   <li class="hamburger-item">
                     <a href="{{ url('/help') }}">ヘルプ</a>
                   </li><!-- /.hamburger-item -->
+                  @guest
                   <li class="hamburger-item">
                     <a href="{{ url('/register') }}">新規登録</a>
                   </li><!-- /.hamburger-item -->
                   <li class="hamburger-item">
                     <a href="{{ url('/login') }}">ログイン</a>
                   </li><!-- /.hamburger-item -->
+                  @endguest
+                  @auth
+                  <li class="hamburger-item">
+                    <a href="{{ url('/logout') }}">ログアウト</a>
+                  </li><!-- /.hamburger-item -->
+                  <li class="hamburger-item">
+                    <a href="{{ url('/mypage') }}">マイページ</a>
+                  </li><!-- /.hamburger-item -->                      
+                  @endauth
                   <li class="hamburger-item">
                     <a href="{{ url('/umashi') }}">RamenUmashiとは</a>
                   </li><!-- /.hamburger-item -->
