@@ -1,6 +1,5 @@
 <h1>RamenUmashi</h1>
-<img src="img/main/ramen-list.jpg">
-
+![Test Image 1](img/main/ramen-list.jpg)
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
