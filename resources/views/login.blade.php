@@ -25,9 +25,6 @@
                   <a class="header-link1-1" href="{{ url('/umashi') }}">RamenUmashiについて</a>
                 </li>
                 <li>
-                  <a class="header-link1-1" href="{{ url('/cancellation') }}">ラーメン店主様ご利用の場合</a>
-                </li>
-                <li>
                   <a class="header-link1-1" href="{{ url('/') }}">ラーメン検索</a>
                 </li>
                 <li>
