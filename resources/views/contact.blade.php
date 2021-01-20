@@ -18,12 +18,24 @@
           <!-- 修正箇所 -->
           <nav class="header-nav-list">
             <ul class="main-nav">
-              <li>
-                <a class="header-link1-1" href="{{ url('/login') }}">Login</a>
+              @guest
+                <li>
+                  <a class="header-link1-1" href="{{ url('/login') }}">Login</a>
+                </li>
+                <li>
+                  <a class="header-link1-1" href="{{ url('/register') }}">Register</a>
+                </li>
+              @endguest
+              @auth
+                <li>
+                  <a class="header-link1-1" href="{{ url('/mypage') }}">マイページ</a>
+                </li>
+                <li>
+                <a class="header-link1-1" href="{{ url('/logout') }}">
+                  ログアウト
+                </a>
               </li>
-              <li>
-                <a class="header-link1-1" href="{{ url('/register') }}">Register</a>
-              </li>
+              @endauth
               <li>
                 <a class="header-link1-1" href="{{ url('/umashi') }}">RamenUmashiについて</a>
               </li>
