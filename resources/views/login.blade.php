@@ -81,19 +81,19 @@
       <h1 id="wrapper-main-login">ログイン</h1>
       <div class="wrapper-login">
         <!--  グリッド-->
-        <form class="reig-center" action="{{action('LoginController@userLogin')}}" method="POST">
+        <form class="reig-center" action="{{action('Auth\LoginController@userLogin')}}" method="POST">
           @csrf
           <div class="main-login-grid">
             <div class="main-login-item" id="main-login-item1">
               <label class="required">
-                メールアドレス：
+                メールアドレスまたはユーザーID：
               </label>
-              @error('email')
+              @error('login')
               <div class="alert">{{ $message }}</div>
               @enderror
             </div>
             <div class="main-login-item">
-              <input type="text" name="email"  value="" >
+              <input type="text" name="login"  value="" >
             </div>
           </div>
           <div class="main-login-grid">

@@ -50,13 +50,13 @@ Route::group(["middleware"=> "loginCheck"], function() {
     //ログイン画面へ画面遷移 
     Route::get('/login','IndexController@login');
     //ログイン結果画面へ画面遷移
-    Route::post('/message/resultlogin','LoginController@userLogin');
+    Route::post('/message/resultlogin','Auth\LoginController@userLogin');
 });
 
 //ログイン中
 Route::group(["middleware"=> "guest"], function() {
     //ログアウト処理
-    Route::get('/logout','LoginController@logout');
+    Route::get('/logout','Auth\LoginController@logout');
     //予約キャンセル
     Route::get('/message/resultcancel','MypageController@delete');
     //予約お店詳細
