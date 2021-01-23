@@ -99,7 +99,7 @@
     <main>
       <h1 id="wrapper-main-regi">ログイン完了です</h1>
         
-      <a class="register-result" href="{{ url('/mypage') }}">
+      <a class="register-result" href="{{action('Shop\ShopController@shop')}}">
         @csrf
         お店管理画面</a>へ
     </main>

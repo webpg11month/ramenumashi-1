@@ -1,20 +1,14 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 // 初期画面
 Route::get('/', function () {
     return view('index');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 
 //インデックス画面へ画面遷移
 Route::get('/','IndexController@index');
@@ -91,13 +85,15 @@ Route::post('/message/resultshopregister','Shop\ShopRegisterController@shopRegis
 Route::get('/shop/shop_login','IndexController@shopLogin');
 
 Route::group(["middleware"=> "shopLoginCheck"], function() {
+    
     //お店ログイン画面へ画面遷移
     Route::post('/message/resultshoplogin','Shop\ShopLoginController@shopLogin');
+    
+    Route::get('/shop/index','Shop\ShopController@shop');    
+    
     Route::get('shop/logout','Shop\ShopLoginController@logout');
 });
 
 //お店検索結果
 Route::get('/shop','SearchController@search');
-
-
 

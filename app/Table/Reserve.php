@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Reserve extends Authenticatable
 {
+    
     protected $table = 'reserve_tb';
 
     protected $fillable = [
