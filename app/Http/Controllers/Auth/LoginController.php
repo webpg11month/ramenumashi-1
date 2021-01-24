@@ -87,7 +87,8 @@ class LoginController extends Controller
         }else{
             Log::info('パスワードが違う');
             return redirect()->back();
-        }   
+        }
+        //return redirect()->back();
     }
 
     public function logout(){

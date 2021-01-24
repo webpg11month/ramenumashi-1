@@ -19,18 +19,32 @@ class LoginController extends Controller
 
     public function userLogin(UserLoginRequest $req){
         $data = $req->all();
-        $email =User::where('email',$req->email)->value('email');
-        $password1 = User::where('email',$req->email)->value('password');
+        Log::info($req->login);
+        $user_status = User::where('email',$req->login)->value('dlflag');
+        if(preg_match('|^[0-9a-z_./?-]+@([0-9a-z-]+\.)+[0-9a-z-]+$|', $req->login)){
+            $email =User::where('email',$req->login)->value('email');
+            $password1 = User::where('email',$req->login)->value('password');
+            Log::info($email);
+            $credentials = [
+                'email' => $email,
+                'password' => $req->password,
+            ];
+        }else {      
+            $user_id = User::where('user_id',$req->login)->value('user_id');
+            $password1 = User::where('user_id',$req->login)->value('password');
+            $credentials = [
+                'user_id' => $user_id,
+                'password' => $req->password,
+            ];   
+            Log::info($user_id);
+        }
 
-        $user_status = User::where('email',$req->email)->value('dlflag');
         if($user_status === '3'){
             Log::info('退会者');
             return redirect()->back();
         }
 
         if(Hash::check($req->password, $password1)){
-            $credentials = $req->only('email', 'password');
-
             Log::info($credentials);
             if(Auth::attempt($credentials)){
                 Log::info('ログイン成功');
@@ -44,13 +58,14 @@ class LoginController extends Controller
         }else{
             Log::info('パスワードが違う');
             return redirect()->back();
-        }   
+        }
+        //return redirect()->back();
     }
 
     public function logout(){
-        
+        \Log::debug('testtestmash');     
         Auth::logout();
-        \Log::debug('ログアウト成功');
-        return redirect('/');
+        \Log::debug('ログアウト成功:test');
+        return redirect('/shop/shop_info');
     }
 }

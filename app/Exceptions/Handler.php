@@ -6,6 +6,8 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 use Illuminate\Support\Facades\Log;
 use \Illuminate\Session\TokenMismatchException;
+use \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -51,11 +53,14 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        if ($exception instanceof TokenMismatchException) {
-            Log::info($exception);
+        Log::info($exception);
+
+        if($exception instanceof MethodNotAllowedHttpException){
             return redirect('');
         }
-
+        if ($exception instanceof TokenMismatchException) {
+            return redirect('');
+        }
         return parent::render($request, $exception);
         
     }

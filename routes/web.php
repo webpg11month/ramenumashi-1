@@ -5,9 +5,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 
 //インデックス画面へ画面遷移
@@ -89,9 +89,14 @@ Route::group(["middleware"=> "shopLoginCheck"], function() {
     //お店ログイン画面へ画面遷移
     Route::post('/message/resultshoplogin','Shop\ShopLoginController@shopLogin');
     
-    Route::get('/shop/index','Shop\ShopController@shop');    
+    Route::get('/shop/index','Shop\ShopController@shop');  
     
-    Route::get('shop/logout','Shop\ShopLoginController@logout');
+    //React処理実装
+    Route::get('/shop/{any}', function () {
+        return view('/shop/index');
+    })->where('/shop/any','.*');  
+    
+    Route::get('/shop/shop_login','Shop\ShopLoginController@logout');
 });
 
 //お店検索結果

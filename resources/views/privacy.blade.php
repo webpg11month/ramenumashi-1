@@ -3,19 +3,7 @@
 <body class="fade-main">
   <!-- ラッピングにて -->
   <div class="wrapper-header">
-    <header>
-      <!-- 修正箇所 -->
-      <!-- 背景画像読込=home -->
-      <div id="ramen-home" class="big-bg">
-        <div class="page-header wrapper">
-          <a class="logo-flex" href="{{ url('/') }}">
-            <img class="fade-main" id="ramen-logo" src="img/logo/ramen-log.png" alt="">
-          </a>
-          <a class="logo-flex" href="{{ url('/') }}">
-            <h1  id="logo-font">
-              RamenUmashi
-            </h1>
-          </a>
+    @include('layout.header')
           <!-- 修正箇所 -->
           <nav class="header-nav-list">
             <ul class="main-nav">

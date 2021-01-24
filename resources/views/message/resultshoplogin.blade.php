@@ -2,32 +2,10 @@
 @section('title', 'ご店舗ログイン')
 <body>
   <div class="wrapper-header">
-    <header>
-      <!-- 修正箇所 -->
-      <!-- 背景画像読込=home -->
-      <div id="ramen-home" class="big-bg">
-        <div class="page-header wrapper">
-          <a class="logo-flex" href="{{ url('/') }}">
-            <img class="fade-main" id="ramen-logo" src="../img/logo/ramen-log.png" alt="">
-          </a>
-          <a class="logo-flex" href="{{ url('/') }}">
-            <h1  id="logo-font">
-              RamenUmashi
-            </h1>
-          </a>
+    @include('layout.header')
           <!-- 修正箇所 -->
           <nav class="header-nav-list">
             <ul class="main-nav">
-              @if(Auth::guard('shop')->check())
-                <li>
-                  <a class="header-link1-1" href="{{ url('shop/login') }}">マイページ</a>
-                </li>
-                <li>
-                  <a class="header-link1-1" href="{{ url('shop/logout') }}">
-                    ログアウト
-                  </a>
-                </li>
-              @endif
               <li>
                 <a class="header-link1-1" href="{{ url('/umashi') }}">RamenUmashiについて</a>
               </li>
