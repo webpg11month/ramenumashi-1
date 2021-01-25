@@ -22,7 +22,7 @@ class ShopLoginCheckMiddleware
                //return redirect('/message/resultshoplogin');
                return $next($request);
         }
-        Log::info('test1');
+        Log::info('test111');
         return $next($request);
     }
 }

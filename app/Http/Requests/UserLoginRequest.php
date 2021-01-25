@@ -27,7 +27,7 @@ class UserLoginRequest extends FormRequest
     {
         Log::info('test1234');
         $test = [
-            'email' => ['required'],
+            'login' => ['required'],
             'password' =>['required','between:8,32'],
         ]; 
         return $test; 
@@ -36,7 +36,7 @@ class UserLoginRequest extends FormRequest
     {
         Log::info('test1');
         return [
-            'email.required' => 'emailは必ず入力してください',
+            'login.required' => 'メールアドレスまたはユーザーIDは必ず入力してください',
             'password.required' => 'パスワードは必ず入力してください',
             'password.between' => 'パスワードは8文字以上、32文字以内です',
         ];

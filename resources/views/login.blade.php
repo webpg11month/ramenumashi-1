@@ -2,19 +2,7 @@
 @section('title', 'ログイン')
 <body>
   <div class="wrapper-header">
-      <header>
-        <!-- 修正箇所 -->
-        <!-- 背景画像読込=home -->
-        <div id="ramen-home" class="big-bg">
-          <div class="page-header wrapper">
-            <a class="logo-flex" href="{{ url('/') }}">
-              <img class="fade-main" id="ramen-logo" src="img/logo/ramen-log.png" alt="">
-            </a>
-            <a class="logo-flex" href="{{ url('/') }}">
-              <h1  id="logo-font">
-                RamenUmashi
-              </h1>
-            </a>
+    @include('layout.header')
             <!-- 修正箇所 -->
             <nav class="header-nav-list">
               <ul class="main-nav">
@@ -81,19 +69,19 @@
       <h1 id="wrapper-main-login">ログイン</h1>
       <div class="wrapper-login">
         <!--  グリッド-->
-        <form class="reig-center" action="{{action('LoginController@userLogin')}}" method="POST">
+        <form class="reig-center" action="{{action('Auth\LoginController@userLogin')}}" method="POST">
           @csrf
           <div class="main-login-grid">
             <div class="main-login-item" id="main-login-item1">
               <label class="required">
-                メールアドレス：
+                メールアドレスまたはユーザーID：
               </label>
-              @error('email')
+              @error('login')
               <div class="alert">{{ $message }}</div>
               @enderror
             </div>
             <div class="main-login-item">
-              <input type="text" name="email"  value="" >
+              <input type="text" name="login"  value="" >
             </div>
           </div>
           <div class="main-login-grid">

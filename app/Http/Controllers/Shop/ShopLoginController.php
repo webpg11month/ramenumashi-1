@@ -20,7 +20,6 @@ class ShopLoginController extends Controller
         $data = $req->all();
         $shop_id =Shop::where('shop_id',$req->shop_id)->value('shop_id');
         $password = Shop::where('shop_id',$req->shop_id)->value('password');
-        Log::info('AAAAAAAAAA');
         $shop_status = Shop::where('shop_id',$req->shop_id)->value('dlflag');
         if($shop_status === '3'){
             Log::info('お店退会者');
@@ -46,9 +45,10 @@ class ShopLoginController extends Controller
     }
 
     public function logout(){
-        
+        \Log::debug('test');        
         Auth::logout();
         \Log::debug('ログアウト成功');
-        return redirect('/');
+
+        return view('shop/shop_login');
     }
 }

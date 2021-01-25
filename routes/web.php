@@ -1,20 +1,14 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 // 初期画面
 Route::get('/', function () {
     return view('index');
 });
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
 
 //インデックス画面へ画面遷移
 Route::get('/','IndexController@index');
@@ -56,13 +50,13 @@ Route::group(["middleware"=> "loginCheck"], function() {
     //ログイン画面へ画面遷移 
     Route::get('/login','IndexController@login');
     //ログイン結果画面へ画面遷移
-    Route::post('/message/resultlogin','LoginController@userLogin');
+    Route::post('/message/resultlogin','Auth\LoginController@userLogin');
 });
 
 //ログイン中
 Route::group(["middleware"=> "guest"], function() {
     //ログアウト処理
-    Route::get('/logout','LoginController@logout');
+    Route::get('/logout','Auth\LoginController@logout');
     //予約キャンセル
     Route::get('/message/resultcancel','MypageController@delete');
     //予約お店詳細
@@ -91,13 +85,20 @@ Route::post('/message/resultshopregister','Shop\ShopRegisterController@shopRegis
 Route::get('/shop/shop_login','IndexController@shopLogin');
 
 Route::group(["middleware"=> "shopLoginCheck"], function() {
+    
     //お店ログイン画面へ画面遷移
     Route::post('/message/resultshoplogin','Shop\ShopLoginController@shopLogin');
-    Route::get('shop/logout','Shop\ShopLoginController@logout');
+    
+    Route::get('/shop/index','Shop\ShopController@shop');  
+    
+    //React処理実装
+    Route::get('/shop/{any}', function () {
+        return view('/shop/index');
+    })->where('/shop/any','.*');  
+    
+    Route::get('/shop/shop_login','Shop\ShopLoginController@logout');
 });
 
 //お店検索結果
 Route::get('/shop','SearchController@search');
-
-
 
