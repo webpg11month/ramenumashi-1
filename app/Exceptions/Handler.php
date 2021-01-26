@@ -7,6 +7,7 @@ use Throwable;
 use Illuminate\Support\Facades\Log;
 use \Illuminate\Session\TokenMismatchException;
 use \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use \Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -60,6 +61,9 @@ class Handler extends ExceptionHandler
         }
         if ($exception instanceof TokenMismatchException) {
             return redirect('');
+        }
+        if($exception instanceof NotFoundHttpException){
+            return redirect('/shop/index');
         }
         return parent::render($request, $exception);
         
