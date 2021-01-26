@@ -1,8 +1,8 @@
-@extends('layout.common-shop')
+@extends('layout.shop.common-shop')
 @section('title', 'ご店主様')
 <body>
-  <div class="wrapper-header">
-    @include('layout.header-shop')
+  <div>
+    @include('layout.shop.header-shop')
           <!-- 修正箇所 -->
           <nav class="hamburger-none">
             <!-- 修正箇所 -->
