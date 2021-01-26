@@ -6,6 +6,9 @@ function NavBar() {
     return (
         <nav>
             <ul className="nav">
+                <Link to="/shop/index">
+                    <li>Top</li>
+                </Link>
                 <Link to="/shop/about">
                     <li>About</li>
                 </Link>
