@@ -15,6 +15,7 @@ class ShopLoginRequest extends FormRequest
      */
     public function authorize()
     {
+        //test
         return true;
     }
 
