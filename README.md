@@ -6,11 +6,29 @@
 
 
 ## gitブランチ構成(git-branch Construction)
-/
-├─ index.html        # トップページ
-├─ member.html       # メンバー紹介ページ
-├─ work.html         # ゼミ活動紹介ページ
-├─ README.md
-├─ images
-└─ css/
-    └─ common.css
+main/
+├─ laravel_react        # react導入して良ければ
+├─ umashi_login      # ログイン機能を開発（ほどんど機能していないのでBK）
+├─ umashi_register        # 新規登録機能を開発（margeする際のBK）
+
+umashi_loginとlaravel_reactをmergeして問題なければ、mainに処理を追加していく。
+umashi_loginとlaravel_reactがもとにもとに戻せない場合は、laravel_registerをbkとして利用する。
+
+## レンタルサーバーの導入手順
+コスト面と汎用性が高いのと中小企業などが多数利用している為、後学の為利用する。
+※AWSの導入は、今後レンタルサーバ→AWSの場面が多くなる為2月末までに着手予定（1年間無料枠利用予定）
+
+FTP環境：WinSCP
+Terminal：Teraterm
+
+１．BKをとる（レンタルサーバーとローカル）
+
+２．ローカル環境にレンタルサーバーのプロジェクトをダウンロードする。
+
+３．Winmergeにて差分チェックする。
+
+４．上記差分チェック完了後にデプロイを行う。
+
+５．ログインやミドルウェアや導入環境やレイアウトなどのテストを行う。
+
+
