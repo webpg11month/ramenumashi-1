@@ -38,69 +38,69 @@ Terminal：Teraterm
 
 ```
 ramenumashi/
-├─.vscode
-├─app
-│  ├─Console
-│  ├─Exceptions
-│  ├─Http
-│  │  ├─Controllers
-│  │  │  ├─Auth
-│  │  │  └─Shop
-│  │  ├─Middleware
-│  │  └─Requests
-│  ├─Model
-│  ├─Providers
-│  └─Table
-├─bootstrap
-│  └─cache
-├─config
-├─database
-│  ├─factories
-│  ├─migrations
-│  └─seeds
-├─node_modules
-├─public
-│  ├─css
-│  │  └─shop
-│  ├─img
-│  │  ├─etc
-│  │  ├─favicon
-│  │  ├─logo
-│  │  └─main
-│  ├─js
-│  └─storage
-│      └─image
-├─resources
-│  ├─js
-│  │  └─components
-│  ├─lang
-│  │  ├─en
-│  │  └─ja
-│  ├─sass
-│  └─views
-│      ├─auth
-│      │  └─passwords
-│      ├─layout
-│      │  └─shop
-│      ├─layouts
-│      ├─message
-│      ├─mypage
-│      └─shop
-├─routes
-├─storage
-│  ├─app
-│  │  └─public
-│  │      └─image
-│  ├─framework
-│  │  ├─cache
-│  │  │  └─data
-│  │  ├─sessions
-│  │  ├─testing
-│  │  └─views
-│  └─logs
-├─tests
-│  ├─Feature
-│  └─Unit
-├─vender
+    ├─.vscode
+    ├─app
+    │  ├─Console
+    │  ├─Exceptions
+    │  ├─Http
+    │  │  ├─Controllers
+    │  │  │  ├─Auth
+    │  │  │  └─Shop
+    │  │  ├─Middleware
+    │  │  └─Requests
+    │  ├─Model
+    │  ├─Providers
+    │  └─Table
+    ├─bootstrap
+    │  └─cache
+    ├─config
+    ├─database
+    │  ├─factories
+    │  ├─migrations
+    │  └─seeds
+    ├─node_modules
+    ├─public
+    │  ├─css
+    │  │  └─shop
+    │  ├─img
+    │  │  ├─etc
+    │  │  ├─favicon
+    │  │  ├─logo
+    │  │  └─main
+    │  ├─js
+    │  └─storage
+    │      └─image
+    ├─resources
+    │  ├─js
+    │  │  └─components
+    │  ├─lang
+    │  │  ├─en
+    │  │  └─ja
+    │  ├─sass
+    │  └─views
+    │      ├─auth
+    │      │  └─passwords
+    │      ├─layout
+    │      │  └─shop
+    │      ├─layouts
+    │      ├─message
+    │      ├─mypage
+    │      └─shop
+    ├─routes
+    ├─storage
+    │  ├─app
+    │  │  └─public
+    │  │      └─image
+    │  ├─framework
+    │  │  ├─cache
+    │  │  │  └─data
+    │  │  ├─sessions
+    │  │  ├─testing
+    │  │  └─views
+    │  └─logs
+    ├─tests
+    │  ├─Feature
+    │  └─Unit
+    ├─vender
 ```
 
