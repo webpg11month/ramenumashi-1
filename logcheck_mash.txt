@@ -62,3 +62,5 @@ composer create-project --prefer-dist laravel/laravel Online "6.*"
 vagrant status
 --停止--
 vagrant halt
+
+testtesttesttest

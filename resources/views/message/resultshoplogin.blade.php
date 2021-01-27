@@ -6,6 +6,15 @@
           <!-- 修正箇所 -->
           <nav class="header-nav-list">
             <ul class="main-nav">
+              @guest
+              @endguest
+              @if(Auth::guard('shop')->check())
+                <li>
+                  <a class="header-link1-1" href="{{ url('shop/logout') }}">
+                    ログアウト
+                  </a>
+                </li>
+              @endif
               <li>
                 <a class="header-link1-1" href="{{ url('/umashi') }}">RamenUmashiについて</a>
               </li>
@@ -37,11 +46,6 @@
                   <li class="hamburger-item">
                     <a href="{{ url('/help') }}">ヘルプ</a>
                   </li><!-- /.hamburger-item -->
-                  @guest
-                  <li class="hamburger-item">
-                    <a href="{{ url('shop/login') }}">お店ログイン</a>
-                  </li><!-- /.hamburger-item -->
-                  @endguest
                   @auth
                   <li class="hamburger-item">
                     <a href="{{ url('shop/logout') }}">ログアウト</a>

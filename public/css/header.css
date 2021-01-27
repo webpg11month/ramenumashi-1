@@ -24,246 +24,320 @@ html {
   /* 全体を真ん中に寄せる */
   margin: 0 auto;
 }
-
-/*　IMGの設定
----------------------------*/
-.big-bg {
-  /* 画像をカバーする（余白が出来てしまう） */
-  background-size: cover;
-}
-/* 画像イメージを設定する */
-#ramen-home {
-  /* 画像読込 */
-  background-image: url(../img/main/ramen.jpg);
-  /* 画像の固定 */
-  background-attachment: fixed;
-  /* 画像領域の大きさ */
-  min-height: 50vh;
-}
-  /* 横並びにする ロゴと文字とフォントを子要素で横並びにする */
-.page-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-/*--------------------------
-ロゴの設定
-・ロゴとフォントを横並びにする
-*/
-.logo-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 80px;
-}
-/* ロゴ画像の大きさ設定 */
-#ramen-logo {
-  margin-top: 20px;
-  width: 100px;
-  height: 100px;
-}
-/* ロゴの設定：カーソル */
-#ramen-logo:hover{
-  opacity:.6;
-  transition-duration:0.8s;
-  transition: all  0.5s ease; 
-}
-/* 文字の設定 */
-#logo-font {
-  text-align: center;
-  /*logoフレックス指定*/
-  color: #fafafa;
-  /* 文字のサイズ変更 */
-  font-size: 3.00rem;
-  /* 文字の枠線 */
-  -webkit-text-stroke:1px #000000;
-  /* RameinUmashiとLOGINの空間調整 */
-  width: 300px;
-  /* 上の調整 */
-  margin-top: 14px;
-}
-/* フォントリンクの設定：カーソル */
-#logo-font:hover{
-  background-color: azure;
-  color: #432;
-  margin-top: 20px;
-  width: 300px;
-  height: 80px;
-  border-radius: 40px;
-  /* ホバー時に動きを加える：基準値は真ん中から動く */
-  transition: all  0.5s ease; 
-}
-
-
-/*--------------------------
-LOGINとREGISTERとRAMENUMASHIについての設定
-*/
-.main-nav {
-  display: flex;
-  /* 文字サイズ変更 */
-  font-size: 1.25rem;
-  /* 大文字に変換する */
-  text-transform: uppercase;
-  /* マージントップを34px */
-  margin-top: 40px;
-  /* リストを削除 */
-  list-style: none;
-  /* レスポンシブ対応で下に段落を落とす */
-  flex-wrap: wrap;
-}
-.main-nav li {
-  /* li要素を右に寄らせる */
-  margin-left: 30px;
-}
-.main-nav a {
-  /* リンクの初期値の色指定 */
-  color: #432;
-}
-.main-nav a:hover {/*ホバー時の処理*/
-  background-color: azure;
-  color: #432;
-  padding: 10px;
-  border-radius: 50px;
-  transition: all  0.5s ease; 
-}
-
-.header-link1-1 {
-  background-color: #fafafa;
-  padding: 10px;
-  opacity: 0.8;
-  border-radius: 15px;
-}
-/*--------------------------
-検索窓の設定
-*/
-.home-content-1{
-  display: none;
-}
-.ramen-search-nav {
-  /*検索窓のフレックス指定*/
-  text-align: center;
-  display: flex;
-  /*flex設定（横並び）*/
-  height: 100px;
-  /*下に余白を入れる（検索窓込みの高さ指定）*/
-  padding-top: 20px;
-  /*上に余白を入れる*/
-  background-color: black;
-  /*背景色設定*/
-  margin-bottom: 0;
-  flex-wrap: wrap;
-  justify-content: center;
-  /*真ん中に設定*/
-}
-
-.ramen-search-size {
-  margin: 0;
-  /*検索の設定*/
-  height: 60px;
-  /*高さ60px*/
-  width: 200px;
-  /*幅200px*/
-}
-
-.ramen-search-size-date {
-  margin: 0;
-  /*日付の設定*/
-  height: 57px;
-  margin-top: 1.9px;
-  /*高さ60px*/
-  width: 190px;
-  /*幅190px*/
-  background-color: white;
-}
-
-#ramen-search-submit {
-  margin: 0;
-  /*検索ボタンの設定*/
-  height: 60px;
-  /*ボタンサイズ高さ60px設定*/
-  width: 120px;
-  /*ボタンサイズ幅120px設定*/
-  font-size: 20px;
-  /*文字サイズ20px設定*/
-}
-
-input[type="search"i] {
-  /*検索それぞれの文字サイズ*/
-  font-size: 20px;
-  /*文字サイズを20pxに設定*/
-}
-
-input[type="date"i] {
-  /*日付の文字サイズ調整*/
-  font-size: 16px;
-  /*文字サイズを16pxに設定*/
-}
-
-#anxiy-search-submit:hover {
-  /*カーソルを乗せた場合*/
-  color: gray;
-  /*黒に変化*/
-}
-
-/*--------------------------------
-スクロール
-*/
-/*--------------------------
-文字スクロールの設定
-*/
-.header-scroll {
-  /*スクロール背景設定*/
-  color: #666666;
-  /*fontの色変更*/
-  background-color: pink;
-  /*背景色を変更*/
-  font-size: 20px;
-}
-
-.header-news {
-  /*スクロール文字の設定*/
-  display: inline-block;
-  /*横並びに変更する*/
-  padding-left: 100%;
-  /*早さ調整*/
-  white-space: nowrap;
-  /*ボックスサイズが指定されている場合にも自動改行しない(スペース領域)*/
-  line-height: 1em;
-  /*topとbottomの幅調整*/
-  animation: scrollAnime 18s linear infinite;
-  /*スクロールアニメの設定*/
-}
-
-.header-news div {
-  /*スクロール文字列の設定*/
-  display: inline-block;
-  /*横ならびに設定する*/
-}
-
-@keyframes scrollAnime {
-
-  /*アニメーションの設定*/
-  0% {
-    transform: translateX(0)
+@media screen and (max-width: 1920px) and (min-width: 1200px){
+  /*　IMGの設定
+  ---------------------------*/
+  .big-bg {
+    /* 画像をカバーする（余白が出来てしまう） */
+    background-size: cover;
+  }
+  /* 画像イメージを設定する */
+  #ramen-home {
+    /* 画像読込 */
+    background-image: url(../img/main/ramen.jpg);
+    /* 画像の固定 */
+    background-attachment: fixed;
+    /* 画像領域の大きさ */
+    min-height: 50vh;
+  }
+    /* 横並びにする ロゴと文字とフォントを子要素で横並びにする */
+  .page-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
-  /*開始位置*/
-  100% {
-    transform: translateX(-100%)
+  /*--------------------------
+  ロゴの設定
+  ・ロゴとフォントを横並びにする
+  */
+  .logo-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+  }
+  /* ロゴ画像の大きさ設定 */
+  #ramen-logo {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+  }
+  /* ロゴの設定：カーソル */
+  #ramen-logo:hover{
+    opacity:.6;
+    transition-duration:0.8s;
+    transition: all  0.5s ease; 
+  }
+  /* 文字の設定 */
+  #logo-font {
+    text-align: center;
+    /*logoフレックス指定*/
+    color: #fafafa;
+    /* 文字のサイズ変更 */
+    font-size: 3.00rem;
+    /* 文字の枠線 */
+    -webkit-text-stroke:1px #000000;
+    /* RameinUmashiとLOGINの空間調整 */
+    width: 300px;
+    /* 上の調整 */
+    margin-top: 14px;
+  }
+  /* フォントリンクの設定：カーソル */
+  #logo-font:hover{
+    background-color: azure;
+    color: #432;
+    margin-top: 20px;
+    width: 300px;
+    height: 80px;
+    border-radius: 40px;
+    /* ホバー時に動きを加える：基準値は真ん中から動く */
+    transition: all  0.5s ease; 
   }
 
-  /*早さ指定*/
-}
-input {
-  margin: 10px;
-}
 
+  /*--------------------------
+  LOGINとREGISTERとRAMENUMASHIについての設定
+  */
+  .main-nav {
+    display: flex;
+    /* 文字サイズ変更 */
+    font-size: 1.25rem;
+    /* 大文字に変換する */
+    text-transform: uppercase;
+    /* マージントップを34px */
+    margin-top: 40px;
+    /* リストを削除 */
+    list-style: none;
+    /* レスポンシブ対応で下に段落を落とす */
+    flex-wrap: wrap;
+  }
+  .main-nav li {
+    /* li要素を右に寄らせる */
+    margin-left: 30px;
+  }
+  .main-nav a {
+    /* リンクの初期値の色指定 */
+    color: #432;
+  }
+  .main-nav a:hover {/*ホバー時の処理*/
+    background-color: azure;
+    color: #432;
+    padding: 10px;
+    border-radius: 50px;
+    transition: all  0.5s ease; 
+  }
+
+  .header-link1-1 {
+    background-color: #fafafa;
+    padding: 10px;
+    opacity: 0.8;
+    border-radius: 15px;
+  }
+  /*--------------------------
+  検索窓の設定
+  */
+  .home-content-1{
+    display: none;
+  }
+  .ramen-search-nav {
+    /*検索窓のフレックス指定*/
+    text-align: center;
+    display: flex;
+    /*flex設定（横並び）*/
+    height: 100px;
+    /*下に余白を入れる（検索窓込みの高さ指定）*/
+    padding-top: 20px;
+    /*上に余白を入れる*/
+    background-color: black;
+    /*背景色設定*/
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*真ん中に設定*/
+  }
+
+  .ramen-search-size {
+    margin: 0;
+    /*検索の設定*/
+    height: 60px;
+    /*高さ60px*/
+    width: 200px;
+    /*幅200px*/
+  }
+
+  .ramen-search-size-date {
+    margin: 0;
+    /*日付の設定*/
+    height: 57px;
+    margin-top: 1.9px;
+    /*高さ60px*/
+    width: 190px;
+    /*幅190px*/
+    background-color: white;
+  }
+
+  #ramen-search-submit {
+    margin: 0;
+    /*検索ボタンの設定*/
+    height: 60px;
+    /*ボタンサイズ高さ60px設定*/
+    width: 120px;
+    /*ボタンサイズ幅120px設定*/
+    font-size: 20px;
+    /*文字サイズ20px設定*/
+  }
+
+  input[type="search"i] {
+    /*検索それぞれの文字サイズ*/
+    font-size: 20px;
+    /*文字サイズを20pxに設定*/
+  }
+
+  input[type="date"i] {
+    /*日付の文字サイズ調整*/
+    font-size: 16px;
+    /*文字サイズを16pxに設定*/
+  }
+
+  #anxiy-search-submit:hover {
+    /*カーソルを乗せた場合*/
+    color: gray;
+    /*黒に変化*/
+  }
+
+}
 /* ハンバーガーの通常ウィンドウの非表示（レスポンシブのみ表示） */
 .hamburger-none {
   display: none;
 }
 @media screen and (max-width:425px){
+  /*　IMGの設定
+  ---------------------------*/
+  .big-bg {
+    /* 画像をカバーする（余白が出来てしまう） */
+    background-size: cover;
+  }
+  /* 画像イメージを設定する */
+  #ramen-home {
+    /* 画像読込 */
+    background-image: url(../img/main/ramen.jpg);
+    /* 画像の固定 */
+    background-attachment: fixed;
+    /* 画像領域の大きさ */
+    min-height: 50vh;
+  }
+    /* 横並びにする ロゴと文字とフォントを子要素で横並びにする */
+  .page-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 
+  /*--------------------------
+  ロゴの設定
+  ・ロゴとフォントを横並びにする
+  */
+  /*--------------------------
+  LOGINとREGISTERとRAMENUMASHIについての設定
+  */
+  .main-nav {
+    display: flex;
+    /* 文字サイズ変更 */
+    font-size: 1.25rem;
+    /* 大文字に変換する */
+    text-transform: uppercase;
+    /* マージントップを34px */
+    margin-top: 40px;
+    /* リストを削除 */
+    list-style: none;
+    /* レスポンシブ対応で下に段落を落とす */
+    flex-wrap: wrap;
+  }
+  .main-nav li {
+    /* li要素を右に寄らせる */
+    margin-left: 30px;
+  }
+  .main-nav a {
+    /* リンクの初期値の色指定 */
+    color: #432;
+  }
+  .header-link1-1 {
+    background-color: #fafafa;
+    padding: 10px;
+    opacity: 0.8;
+    border-radius: 15px;
+  }
+  /*--------------------------
+  検索窓の設定
+  */
+  .home-content-1{
+    display: none;
+  }
+  .ramen-search-nav {
+    /*検索窓のフレックス指定*/
+    text-align: center;
+    display: flex;
+    /*flex設定（横並び）*/
+    height: 100px;
+    /*下に余白を入れる（検索窓込みの高さ指定）*/
+    padding-top: 20px;
+    /*上に余白を入れる*/
+    background-color: black;
+    /*背景色設定*/
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*真ん中に設定*/
+  }
+
+  .ramen-search-size {
+    margin: 0;
+    /*検索の設定*/
+    height: 60px;
+    /*高さ60px*/
+    width: 200px;
+    /*幅200px*/
+  }
+
+  .ramen-search-size-date {
+    margin: 0;
+    /*日付の設定*/
+    height: 57px;
+    margin-top: 1.9px;
+    /*高さ60px*/
+    width: 190px;
+    /*幅190px*/
+    background-color: white;
+  }
+
+  #ramen-search-submit {
+    margin: 0;
+    /*検索ボタンの設定*/
+    height: 60px;
+    /*ボタンサイズ高さ60px設定*/
+    width: 120px;
+    /*ボタンサイズ幅120px設定*/
+    font-size: 20px;
+    /*文字サイズ20px設定*/
+  }
+
+  input[type="search"i] {
+    /*検索それぞれの文字サイズ*/
+    font-size: 20px;
+    /*文字サイズを20pxに設定*/
+  }
+
+  input[type="date"i] {
+    /*日付の文字サイズ調整*/
+    font-size: 16px;
+    /*文字サイズを16pxに設定*/
+  }
+
+  #anxiy-search-submit:hover {
+    /*カーソルを乗せた場合*/
+    color: gray;
+    /*黒に変化*/
+  }
   .big-bg {
     height: 300px;
     /* 画像をカバーする（余白が出来てしまう） */
@@ -272,21 +346,166 @@ input {
     
     position: relative;
     /*logoフレックス指定*/
-    color: #fafafa;
-    margin-top: 50px;
-    margin-right: 80px;
-    margin-left: 40px;
-    /* 文字のサイズ変更 */
-    font-size: 2.75rem;
-    /* 文字の枠線 */
-    -webkit-text-stroke:1px #000000;
-    /* 文字の幅サイズ */
-    width: 250px;
+
   
   }
 }
 
-@media screen and (min-width:325px){
+@media screen and (min-width:320px){
+  /*　IMGの設定
+  ---------------------------*/
+  .big-bg {
+    /* 画像をカバーする（余白が出来てしまう） */
+    background-size: cover;
+  }
+  /* 画像イメージを設定する */
+  #ramen-home {
+    /* 画像読込 */
+    background-image: url(../img/main/ramen.jpg);
+    /* 画像の固定 */
+    background-attachment: fixed;
+    /* 画像領域の大きさ */
+    min-height: 50vh;
+  }
+    /* 横並びにする ロゴと文字とフォントを子要素で横並びにする */
+  .page-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  /*--------------------------
+  ロゴの設定
+  ・ロゴとフォントを横並びにする
+  */
+  .logo-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+  }
+  /* ロゴ画像の大きさ設定 */
+  #ramen-logo {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+  }
+  /* ロゴの設定：カーソル */
+  #ramen-logo:hover{
+    opacity:.6;
+    transition-duration:0.8s;
+    transition: all  0.5s ease; 
+  }
+  /* 文字の設定 */
+  #logo-font {
+    text-align: center;
+    /*logoフレックス指定*/
+    color: #fafafa;
+    /* 文字のサイズ変更 */
+    font-size: 3.00rem;
+
+    /* 文字の枠線 */
+    -webkit-text-stroke:1px #000000;
+    /* RameinUmashiとLOGINの空間調整 */
+    width: 300px;
+  }
+  /* フォントリンクの設定：カーソル */
+
+  /*--------------------------
+  LOGINとREGISTERとRAMENUMASHIについての設定
+  */
+  .main-nav {
+    display: flex;
+    /* 文字サイズ変更 */
+    font-size: 1.25rem;
+    /* 大文字に変換する */
+    text-transform: uppercase;
+    /* マージントップを34px */
+    margin-top: 40px;
+    /* リストを削除 */
+    list-style: none;
+    /* レスポンシブ対応で下に段落を落とす */
+    flex-wrap: wrap;
+  }
+  .main-nav li {
+    /* li要素を右に寄らせる */
+    margin-left: 30px;
+  }
+  .main-nav a {
+    /* リンクの初期値の色指定 */
+    color: #432;
+  }
+
+  .header-link1-1 {
+    background-color: #fafafa;
+    padding: 10px;
+    opacity: 0.8;
+    border-radius: 15px;
+  }
+  /*--------------------------
+  検索窓の設定
+  */
+  .home-content-1{
+    display: none;
+  }
+  .ramen-search-nav {
+    /*検索窓のフレックス指定*/
+    text-align: center;
+    display: flex;
+    /*flex設定（横並び）*/
+    height: 100px;
+    /*下に余白を入れる（検索窓込みの高さ指定）*/
+    padding-top: 20px;
+    /*上に余白を入れる*/
+    background-color: black;
+    /*背景色設定*/
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*真ん中に設定*/
+  }
+
+  .ramen-search-size {
+    margin: 0;
+    /*検索の設定*/
+    height: 60px;
+    /*高さ60px*/
+    width: 200px;
+    /*幅200px*/
+  }
+
+  .ramen-search-size-date {
+    margin: 0;
+    /*日付の設定*/
+    height: 57px;
+    margin-top: 1.9px;
+    /*高さ60px*/
+    width: 190px;
+    /*幅190px*/
+    background-color: white;
+  }
+
+  #ramen-search-submit {
+    margin: 0;
+    /*検索ボタンの設定*/
+    height: 60px;
+    /*ボタンサイズ高さ60px設定*/
+    width: 120px;
+    /*ボタンサイズ幅120px設定*/
+    font-size: 20px;
+    /*文字サイズ20px設定*/
+  }
+
+  input[type="search"i] {
+    /*検索それぞれの文字サイズ*/
+    font-size: 20px;
+    /*文字サイズを20pxに設定*/
+  }
+
+  input[type="date"i] {
+    /*日付の文字サイズ調整*/
+    font-size: 16px;
+    /*文字サイズを16pxに設定*/
+  }
 
   .big-bg {
     height: 300px;
@@ -298,8 +517,8 @@ input {
     /*logoフレックス指定*/
     color: #fafafa;
     margin-top: 0;
-    margin-right: 80px;
-    margin-left: 40px;
+    margin-right: 110px;
+    margin-left: 20px;
 
     /* 文字のサイズ変更 */
     font-size: 2.75rem;
