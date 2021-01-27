@@ -38,7 +38,6 @@ Terminal：Teraterm
 
 ```
 ramenumashi/
-    ├─.vscode
     ├─app
     │  ├─Console
     │  ├─Exceptions
