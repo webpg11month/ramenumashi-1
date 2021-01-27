@@ -6,12 +6,14 @@
 
 
 ## gitブランチ構成(git-branch Construction)
+
+```
 main/
 ├─ laravel_react    # react導入して良ければ
 ├─ umashi_login     # ログイン機能を開発（ほどんど機能していないのでBK）
 ├─ umashi_register  # 新規登録機能を開発（margeする際のBK）
+```
 
-## gitブランチ(補足)
 umashi_loginとlaravel_reactをmergeして問題なければ、mainに処理を追加していく。
 umashi_loginとlaravel_reactがもとにもとに戻せない場合は、laravel_registerをbkとして利用する。
 
