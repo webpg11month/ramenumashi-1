@@ -100,6 +100,6 @@ ramenumashi/
     ├─tests
     │  ├─Feature
     │  └─Unit
-    ├─vender
+    └─vender
 ```
 
